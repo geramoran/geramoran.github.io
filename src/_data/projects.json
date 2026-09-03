@@ -20,8 +20,8 @@
     "stack": ["TypeScript", "NestJS", "Drizzle", "PostgreSQL", "React 18", "Vite", "Tailwind", "shadcn/ui", "Docker", "Ubuntu 24.04"],
     "caseStudy": {
       "problem": {
-        "es": "Una PYME que no sabe cuánto le cuesta producir vende a ciegas. Las hojas de cálculo que usan se rompen al crecer: cada giro inventa su propio vocabulario, nadie puede rastrear de dónde salió un número, y los datos de varias empresas terminan mezclados en el mismo archivo. Quise resolverlo con un producto donde cada fórmula fuera auditable y el aislamiento entre empresas existiera desde el primer commit, no como parche posterior.",
-        "en": "A small business that does not know its production cost is selling blind. The spreadsheets they use break as they grow: every industry invents its own vocabulary, nobody can trace where a number came from, and data from several companies ends up mixed in one file. I set out to solve it with a product where every formula is auditable and tenant isolation exists from the first commit, not as a later patch."
+        "es": "Una PYME que no sabe cuánto le cuesta producir vende a ciegas. Las hojas de cálculo que usan se rompen al crecer: cada giro inventa su propio vocabulario, nadie puede rastrear de dónde salió un número, y los datos de varias empresas terminan mezclados en el mismo archivo. Lo resolví con un sistema donde cada fórmula es auditable y el aislamiento entre empresas existe desde el primer commit, no como parche posterior.",
+        "en": "A small business that does not know its production cost is selling blind. The spreadsheets they use break as they grow: every industry invents its own vocabulary, nobody can trace where a number came from, and data from several companies ends up mixed in one file. I built a system where every formula is auditable and tenant isolation exists from the first commit, not as a later patch."
       },
       "decisions": [
         {
@@ -62,8 +62,8 @@
         "en": "Deployed and running since July 2026, with the deterministic engine covered by 346 tests and the specification acting as the source of truth for every formula."
       },
       "limits": {
-        "es": "Está desplegado, no lanzado: no hay usuarios, ni clientes, ni ingresos, y el dominio todavía no está registrado. El repositorio es privado, así que no hay enlace ni capturas. Es un proyecto en curso, no un producto terminado.",
-        "en": "It is deployed, not launched: no users, no customers, no revenue, and the domain is not registered yet. The repository is private, so there is no link and no screenshots. It is ongoing work, not a finished product."
+        "es": "Está desplegado en un VPS, no lanzado ni entregado todavía al cliente: no hay usuarios ni operación real encima, y el dominio aún no está registrado. El repositorio es privado, así que no hay enlace ni capturas. Es un proyecto en curso, no un producto terminado.",
+        "en": "It is deployed to a VPS, not launched and not yet handed over to the client: no users, no real operation running on it, and the domain is not registered yet. The repository is private, so there is no link and no screenshots. It is ongoing work, not a finished product."
       }
     }
   },
