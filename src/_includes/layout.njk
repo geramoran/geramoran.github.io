@@ -33,6 +33,7 @@
 {# Se aplica el tema antes de pintar para que no haya destello al recargar. #}
 <script>
 (function () {
+  document.documentElement.classList.add("js");
   try {
     var saved = localStorage.getItem("theme");
     var dark = saved ? saved === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -80,23 +81,32 @@
   <div class="topbar__inner">
     <a class="topbar__brand mono" href="{{ lang | homeUrl | url }}">{{ site.shortName }}</a>
 
-    <nav class="topbar__nav mono" aria-label="{{ t.nav.projects }}">
-      <a href="{{ lang | homeUrl | url }}#proyectos">{{ t.nav.projects }}</a>
-      <a href="{{ lang | homeUrl | url }}#experiencia">{{ t.nav.experience }}</a>
-      <a href="{{ lang | homeUrl | url }}#tecnologias">{{ t.nav.technologies }}</a>
-      <a href="{{ lang | homeUrl | url }}#formacion">{{ t.nav.training }}</a>
-      <a href="{{ lang | homeUrl | url }}#contacto">{{ t.nav.contact }}</a>
-    </nav>
+    <button type="button" class="topbar__burger mono" data-menu-toggle aria-expanded="false" aria-controls="menu-principal">
+      <span class="topbar__bars" aria-hidden="true"></span>
+      <span data-menu-label>{{ t.labels.menu }}</span>
+      <span class="visually-hidden" data-menu-open-label>{{ t.labels.menuOpen }}</span>
+      <span class="visually-hidden" data-menu-close-label>{{ t.labels.menuClose }}</span>
+    </button>
 
-    <div class="topbar__tools mono">
-      <a class="topbar__lang" href="{{ (altUrl or (t.other | homeUrl)) | url }}" hreflang="{{ t.other }}" lang="{{ t.other }}" aria-label="{{ t.labels.language }}: {{ t.otherName }}">{{ t.otherLabel }}</a>
-      <button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="8"></circle><path d="M12 4 A8 8 0 0 1 12 20 Z" fill="currentColor" stroke="none"></path></svg>
-        <span data-theme-label>{{ t.labels.themeToDark }}</span>
-        <span class="visually-hidden" data-theme-to-dark>{{ t.labels.themeToDark }}</span>
-        <span class="visually-hidden" data-theme-to-light>{{ t.labels.themeToLight }}</span>
-      </button>
-      <a class="btn btn--outline" href="{{ site.cv | url }}" download>CV.pdf</a>
+    <div class="topbar__menu" id="menu-principal" data-menu>
+      <nav class="topbar__nav mono" aria-label="{{ t.nav.projects }}">
+        <a href="{{ lang | homeUrl | url }}#proyectos">{{ t.nav.projects }}</a>
+        <a href="{{ lang | homeUrl | url }}#experiencia">{{ t.nav.experience }}</a>
+        <a href="{{ lang | homeUrl | url }}#tecnologias">{{ t.nav.technologies }}</a>
+        <a href="{{ lang | homeUrl | url }}#formacion">{{ t.nav.training }}</a>
+        <a href="{{ lang | homeUrl | url }}#contacto">{{ t.nav.contact }}</a>
+      </nav>
+
+      <div class="topbar__tools mono">
+        <a class="topbar__lang" href="{{ (altUrl or (t.other | homeUrl)) | url }}" hreflang="{{ t.other }}" lang="{{ t.other }}" aria-label="{{ t.labels.language }}: {{ t.otherName }}">{{ t.otherLabel }}</a>
+        <button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="8"></circle><path d="M12 4 A8 8 0 0 1 12 20 Z" fill="currentColor" stroke="none"></path></svg>
+          <span data-theme-label>{{ t.labels.themeToDark }}</span>
+          <span class="visually-hidden" data-theme-to-dark>{{ t.labels.themeToDark }}</span>
+          <span class="visually-hidden" data-theme-to-light>{{ t.labels.themeToLight }}</span>
+        </button>
+        <a class="btn btn--outline" href="{{ site.cv | url }}" download>CV.pdf</a>
+      </div>
     </div>
   </div>
 </header>
@@ -147,5 +157,6 @@
 </footer>
 
 <script src="{{ '/assets/theme.js' | url }}" defer></script>
+<script src="{{ '/assets/menu.js' | url }}" defer></script>
 </body>
 </html>

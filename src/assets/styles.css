@@ -148,6 +148,33 @@ img { max-width: 100%; height: auto; }
 }
 .theme-toggle:hover { border-color: var(--ink); }
 
+/* El envoltorio no existe en escritorio: sus hijos siguen siendo hijos
+   directos del flex de .topbar__inner. En movil se vuelve el panel plegable. */
+.topbar__menu { display: contents; }
+
+/* La barra es sticky: sin este margen el salto por ancla deja el titulo
+   de la seccion escondido debajo de ella. */
+.section[id], .footer[id] { scroll-margin-top: 4.5rem; }
+
+.topbar__burger {
+  display: none; align-items: center; gap: 0.5rem;
+  background: none; border: 1px solid var(--rule); color: var(--ink);
+  font-family: var(--font-mono); font-size: 0.6875rem;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 0.4rem 0.7rem; min-height: 34px; cursor: pointer;
+}
+.topbar__burger:hover { border-color: var(--ink); }
+/* Tres barras dibujadas con la propia caja y sus bordes: sin SVG ni iconos. */
+.topbar__bars {
+  width: 14px; height: 9px;
+  border-top: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor;
+  position: relative;
+}
+.topbar__bars::after {
+  content: ""; position: absolute; left: 0; right: 0; top: 50%;
+  border-top: 1.5px solid currentColor;
+}
+
 /* ---------- Botones ---------- */
 
 .btn {
@@ -361,7 +388,27 @@ img { max-width: 100%; height: auto; }
 @media (max-width: 780px) {
   :root { --pad: 1.25rem; }
   .topbar__inner { flex-wrap: wrap; gap: 0.75rem; padding-top: 0.75rem; padding-bottom: 0.75rem; }
-  .topbar__nav { order: 3; width: 100%; gap: 1rem; overflow-x: auto; padding-bottom: 0.25rem; }
+  .topbar__burger { display: inline-flex; }
+
+  /* Sin JS el menu se queda desplegado: nadie se queda sin navegacion. */
+  .topbar__menu {
+    display: flex; order: 3; width: 100%;
+    flex-direction: column; align-items: flex-start; gap: 1rem;
+  }
+  .js .topbar__menu { display: none; }
+  .js .topbar__menu[data-open] { display: flex; }
+  .topbar__menu[data-open] { border-top: 1px solid var(--rule); padding-top: 1rem; padding-bottom: 0.5rem; }
+
+  .topbar__nav {
+    width: 100%; flex-direction: column; flex-wrap: nowrap; gap: 0;
+    font-size: 0.8125rem;
+  }
+  .topbar__nav a { display: block; width: 100%; padding: 0.7rem 0; color: var(--ink); }
+  .topbar__nav a + a { border-top: 1px solid var(--rule); }
+
+  .topbar__tools { width: 100%; flex-wrap: wrap; gap: 0.5rem; padding-top: 0.25rem; }
+  .topbar__tools .topbar__lang { border: 1px solid var(--rule); padding: 0.4rem 0.6rem; min-height: 34px; display: inline-flex; align-items: center; }
+  .topbar__tools .theme-toggle, .topbar__tools .btn { min-height: 34px; }
   .hero__inner { padding-top: 3rem; }
   .proj, .row, .techgroup { grid-template-columns: minmax(0, 1fr); gap: 0.9rem; }
   .proj__actions, .row__aside { grid-column: auto; }

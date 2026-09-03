@@ -67,7 +67,10 @@
       "theme": "Tema",
       "themeToDark": "Oscuro",
       "themeToLight": "Claro",
-      "language": "Idioma"
+      "language": "Idioma",
+      "menu": "Menú",
+      "menuOpen": "Abrir menú",
+      "menuClose": "Cerrar menú"
     },
     "contact": {
       "title": "¿Hablamos de un rol?",
@@ -155,7 +158,10 @@
       "theme": "Theme",
       "themeToDark": "Dark",
       "themeToLight": "Light",
-      "language": "Language"
+      "language": "Language",
+      "menu": "Menu",
+      "menuOpen": "Open menu",
+      "menuClose": "Close menu"
     },
     "contact": {
       "title": "Looking for someone for this?",
