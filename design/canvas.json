@@ -1,0 +1,12 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html", "title": "A · Ficha técnica", "x": 0, "y": 0, "w": 1440, "h": 4600, "is_interactive": true },
+    { "file": "Bitacora.dc.html", "title": "B · Bitácora editorial", "x": 1720, "y": 0, "w": 1440, "h": 5100, "is_interactive": true }
+  ],
+  "annotations": [
+    { "id": "note-a", "x": 0, "y": -240, "w": 560, "text": "A · FICHA TÉCNICA\nSecciones del template de mouredev, en orden que respeta tu brief: avatar y datos + contacto/CV/redes en el hero, sobre mí, §01 Proyectos, §02 Pruebas técnicas, §03 Experiencia, §04 Tecnologías, §05 Formación, contacto.\nEl botón «Oscuro» de la barra funciona: pruébalo. CostoPreciso va sin ningún enlace, con una nota explícita de que es privado.\nLe habla al CTO que escanea evidencia. Sacrifica calidez: se lee como documento técnico." },
+    { "id": "note-b", "x": 1720, "y": -240, "w": 560, "text": "B · BITÁCORA EDITORIAL\nMismas ocho secciones, contadas como entradas largas: cada proyecto trae columna lateral con citas, cifras y stack. La historia de los seis bugs de producción es el gancho.\nEl botón «Oscuro» de la barra funciona: pruébalo. CostoPreciso va sin ningún enlace, con una nota explícita de que es privado.\nLe habla a fundador técnico o hiring manager que sí lee. Sacrifica escaneo rápido: en 30 segundos da poco." },
+    { "id": "note-diff", "x": 880, "y": 5320, "w": 560, "text": "AMBAS COMPARTEN\nProyectos arriba de experiencia (tu brief manda sobre el orden de mouredev).\nElvira Richards lleva «Ver en vivo» — es la plantilla del render condicional: si liveUrl es null se cae el botón y queda solo el caso de estudio, como en Chat interno y Almacén.\nAvatar = monograma provisional; falta tu decisión sobre foto." }
+  ],
+  "launch": { "view": "canvas" }
+}

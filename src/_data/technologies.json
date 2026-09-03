@@ -1,0 +1,68 @@
+[
+  {
+    "id": "strong-long",
+    "label": {
+      "es": "5+ años · uso prolongado en producción",
+      "en": "5+ years · sustained production use"
+    },
+    "emphasis": "strong",
+    "items": ["PHP / Laravel", "C# / ASP.NET MVC", "JavaScript / jQuery", "MySQL / MariaDB", "SQL Server (T-SQL)", "VueJS 2/3", "AngularJS", "HTML / CSS / Bootstrap"]
+  },
+  {
+    "id": "strong-recent",
+    "label": {
+      "es": "Fuerte y reciente · producción 2022-2026",
+      "en": "Strong and recent · production 2022-2026"
+    },
+    "emphasis": "strong",
+    "items": ["TypeScript", "ReactJS", "Node.js / Express", "Prisma ORM", "PostgreSQL", "Socket.io", "Tailwind", "Docker"]
+  },
+  {
+    "id": "developing",
+    "label": {
+      "es": "En desarrollo · exposición real pero más estrecha",
+      "en": "Developing · real but narrower exposure"
+    },
+    "emphasis": "muted",
+    "items": ["LangChain", "LangGraph", "Claude API", "Python", "Next.js", "Redis", "AWS S3", "RxJS"]
+  },
+  {
+    "id": "single-project",
+    "label": {
+      "es": "Un proyecto completo, no años de uso",
+      "en": "One complete project, not years of use"
+    },
+    "emphasis": "accent",
+    "items": ["n8n"],
+    "note": {
+      "es": "Un agente conversacional construido y documentado de extremo a extremo (prueba técnica de CuatroD Studios, junio de 2026). No está al nivel de PHP o TypeScript y no lo presento así.",
+      "en": "One conversational agent built and documented end to end (CuatroD Studios technical test, June 2026). It is not on the level of PHP or TypeScript and I do not present it that way."
+    }
+  },
+  {
+    "id": "method",
+    "label": { "es": "Metodología", "en": "Method" },
+    "emphasis": "muted",
+    "items": [],
+    "note": {
+      "es": "Agentic engineering como práctica central de desarrollo: Claude Code a diario, desarrollo guiado por especificación con Spec-kit y orquestación multiagente. Flujo Git profesional con ramas, pull requests y code review. Entornos Linux/Ubuntu con servicios contenerizados.",
+      "en": "Agentic engineering as the core development practice: Claude Code daily, spec-driven development with Spec-kit and multi-agent orchestration. Professional Git flow with branches, pull requests and code review. Linux/Ubuntu environments with containerised services."
+    }
+  },
+  {
+    "id": "legacy",
+    "label": { "es": "Legacy · capaz de mantener", "en": "Legacy · able to maintain" },
+    "emphasis": "muted",
+    "items": ["Visual Basic 6.0", "Firebird", "Magento", "Umbraco", "WordPress", "Ionic", "DevExpress"]
+  },
+  {
+    "id": "domains",
+    "label": { "es": "Dominios", "en": "Domains" },
+    "emphasis": "muted",
+    "items": [],
+    "note": {
+      "es": "Arquitectura SaaS multitenant · sistemas en tiempo real · orquestación de IA en producción · agentes conversacionales y automatización de flujos (debounce de ráfagas, idempotencia de webhooks, memoria persistente por usuario, contratos de salida estructurada para LLM, escalamiento a revisión humana) · ERP, RRHH y nómina · flujos de aprobación y requisiciones · pasarelas de pago (PayPal, Conekta, OpenPay, Stripe) · almacén, logística e inventario · punto de venta y facturación electrónica.",
+      "en": "Multi-tenant SaaS architecture · real-time systems · AI orchestration in production · conversational agents and workflow automation (burst debouncing, webhook idempotency, persistent per-user memory, structured-output contracts for LLMs, escalation to human review) · ERP, HR and payroll · approval and requisition flows · payment gateways (PayPal, Conekta, OpenPay, Stripe) · warehouse, logistics and inventory · point of sale and electronic invoicing."
+    }
+  }
+]

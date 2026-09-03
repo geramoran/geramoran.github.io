@@ -1,0 +1,151 @@
+{%- set t = i18n[lang] -%}
+<!doctype html>
+<html lang="{{ lang }}" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }}</title>
+<meta name="description" content="{{ description }}">
+<meta name="author" content="{{ site.name }}">
+<link rel="canonical" href="{{ pageUrl | url | absolute(site.url) }}">
+<link rel="alternate" hreflang="{{ lang }}" href="{{ pageUrl | url | absolute(site.url) }}">
+{% if altUrl %}<link rel="alternate" hreflang="{{ t.other }}" href="{{ altUrl | url | absolute(site.url) }}">{% endif %}
+<link rel="alternate" hreflang="x-default" href="{{ "/" | url | absolute(site.url) }}">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="{% if lang == 'es' %}es_MX{% else %}en_US{% endif %}">
+<meta property="og:title" content="{{ title }}">
+<meta property="og:description" content="{{ description }}">
+<meta property="og:url" content="{{ pageUrl | url | absolute(site.url) }}">
+<meta property="og:site_name" content="{{ site.name }}">
+{% if site.ogImage %}<meta property="og:image" content="{{ site.ogImage | url | absolute(site.url) }}">{% endif %}
+<meta name="twitter:card" content="{% if site.ogImage %}summary_large_image{% else %}summary{% endif %}">
+<meta name="twitter:title" content="{{ title }}">
+<meta name="twitter:description" content="{{ description }}">
+{% if site.ogImage %}<meta name="twitter:image" content="{{ site.ogImage | url | absolute(site.url) }}">{% endif %}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap">
+<link rel="stylesheet" href="{{ '/assets/styles.css' | url }}">
+<link rel="icon" href="{{ '/assets/favicon.svg' | url }}" type="image/svg+xml">
+
+{# Se aplica el tema antes de pintar para que no haya destello al recargar. #}
+<script>
+(function () {
+  try {
+    var saved = localStorage.getItem("theme");
+    var dark = saved ? saved === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+    document.documentElement.setAttribute("data-theme", dark ? "dark" : "light");
+  } catch (e) {}
+})();
+</script>
+{% if isHome %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ site.name }}",
+  "jobTitle": "{{ site.jobTitle | t(lang) }}",
+  "email": "mailto:{{ site.email }}",
+  "url": "{{ pageUrl | url | absolute(site.url) }}",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "{{ site.locality }}",
+    "addressRegion": "{{ site.region }}",
+    "addressCountry": "{{ site.country }}"
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Instituto Tecnológico Superior de Lerdo"
+  },
+  "knowsLanguage": [
+    { "@type": "Language", "name": "Spanish", "alternateName": "es" },
+    { "@type": "Language", "name": "English", "alternateName": "en" }
+  ],
+  "knowsAbout": [
+    "TypeScript", "React", "Node.js", "PostgreSQL", "Prisma", "Socket.io",
+    "PHP", "Laravel", "C#", "ASP.NET MVC", "Docker",
+    "LLM tool orchestration", "Multi-tenant SaaS architecture"
+  ],
+  "sameAs": ["{{ site.linkedin }}", "{{ site.github }}"]
+}
+</script>
+{% endif %}
+</head>
+<body>
+<a class="skip-link" href="#contenido">{{ t.meta.skipToContent }}</a>
+
+<header class="topbar">
+  <div class="topbar__inner">
+    <a class="topbar__brand mono" href="{{ lang | homeUrl | url }}">{{ site.shortName }}</a>
+
+    <nav class="topbar__nav mono" aria-label="{{ t.nav.projects }}">
+      <a href="{{ lang | homeUrl | url }}#proyectos">{{ t.nav.projects }}</a>
+      <a href="{{ lang | homeUrl | url }}#experiencia">{{ t.nav.experience }}</a>
+      <a href="{{ lang | homeUrl | url }}#tecnologias">{{ t.nav.technologies }}</a>
+      <a href="{{ lang | homeUrl | url }}#formacion">{{ t.nav.training }}</a>
+      <a href="{{ lang | homeUrl | url }}#contacto">{{ t.nav.contact }}</a>
+    </nav>
+
+    <div class="topbar__tools mono">
+      <a class="topbar__lang" href="{{ (altUrl or (t.other | homeUrl)) | url }}" hreflang="{{ t.other }}" lang="{{ t.other }}" aria-label="{{ t.labels.language }}: {{ t.otherName }}">{{ t.otherLabel }}</a>
+      <button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="8"></circle><path d="M12 4 A8 8 0 0 1 12 20 Z" fill="currentColor" stroke="none"></path></svg>
+        <span data-theme-label>{{ t.labels.themeToDark }}</span>
+        <span class="visually-hidden" data-theme-to-dark>{{ t.labels.themeToDark }}</span>
+        <span class="visually-hidden" data-theme-to-light>{{ t.labels.themeToLight }}</span>
+      </button>
+      <a class="btn btn--outline" href="{{ site.cv | url }}" download>CV.pdf</a>
+    </div>
+  </div>
+</header>
+
+<main id="contenido">
+{{ content | safe }}
+</main>
+
+<footer class="footer" id="contacto">
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <div>
+        <h2 class="footer__title">{{ t.contact.title }}</h2>
+        <p class="footer__lede">{{ t.contact.lede }}</p>
+        <a class="btn btn--accent mono" href="mailto:{{ site.email }}">{{ site.email }}</a>
+      </div>
+      <div class="mono footer__col">
+        <p class="footer__colTitle">{{ t.contact.siteColumn }}</p>
+        <ul>
+          <li><a href="{{ lang | homeUrl | url }}#proyectos">{{ t.nav.projects }}</a></li>
+          <li><a href="{{ lang | homeUrl | url }}#experiencia">{{ t.nav.experience }}</a></li>
+          <li><a href="{{ lang | homeUrl | url }}#tecnologias">{{ t.nav.technologies }}</a></li>
+          <li><a href="{{ lang | homeUrl | url }}#formacion">{{ t.nav.training }}</a></li>
+        </ul>
+      </div>
+      <div class="mono footer__col">
+        <p class="footer__colTitle">{{ t.contact.profilesColumn }}</p>
+        <ul>
+          <li><a href="{{ site.linkedin }}" rel="me noopener">LinkedIn</a></li>
+          <li><a href="{{ site.github }}" rel="me noopener">GitHub</a></li>
+          <li><a href="{{ site.cv | url }}" download>CV.pdf</a></li>
+        </ul>
+      </div>
+      <div class="mono footer__col footer__col--muted">
+        <p class="footer__colTitle">{{ t.contact.locationColumn }}</p>
+        <ul>
+          <li>{{ site.location | t(lang) }}</li>
+          <li>{{ site.timezone }}</li>
+          <li>{{ t.languages }}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom mono">
+      <span>{{ t.footer.rights }}</span>
+      <span>{{ t.footer.colophon }}</span>
+    </div>
+  </div>
+</footer>
+
+<script src="{{ '/assets/theme.js' | url }}" defer></script>
+</body>
+</html>

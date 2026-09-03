@@ -1,0 +1,178 @@
+{
+  "es": {
+    "code": "es",
+    "other": "en",
+    "otherLabel": "EN",
+    "otherName": "English",
+    "dir": "/",
+    "home": "Inicio",
+    "nav": {
+      "projects": "Proyectos",
+      "tests": "Pruebas técnicas",
+      "experience": "Experiencia",
+      "technologies": "Tecnologías",
+      "training": "Formación",
+      "contact": "Contacto"
+    },
+    "meta": {
+      "homeTitle": "Jose Gerardo Martínez Morán — Ingeniero en informática",
+      "homeDescription": "Ingeniero en informática con nueve años en producción. Sistemas web de punta a punta con TypeScript, React, Node y PostgreSQL, y orquestación de modelos de lenguaje en sistemas reales.",
+      "skipToContent": "Saltar al contenido"
+    },
+    "hero": {
+      "eyebrow": "Ingeniero en informática · 9 años en producción",
+      "headline": "Nueve años poniendo sistemas web en producción. Ahora, con un modelo de lenguaje al volante.",
+      "lede": "Construyo de punta a punta con TypeScript, React, Node y PostgreSQL, con base profunda previa en PHP/Laravel y C#/ASP.NET. Mi trabajo con IA es orquestación e integración: definir herramientas, invocarlas desde un LLM, diseñar prompts, manejar permisos y caminos de falla. No entrenamiento de modelos ni MLOps.",
+      "ctaProjects": "Ver proyectos",
+      "ctaCv": "Descargar CV",
+      "statusLabel": "Estado",
+      "status": [
+        "Buscando rol: AI / agentic engineering",
+        "o senior full-stack",
+        "Remoto o híbrido",
+        "Respondo en el día"
+      ]
+    },
+    "sections": {
+      "projects": "Proyectos",
+      "projectsNote": "Casos de estudio narrados. Las demos en vivo se irán publicando una a una.",
+      "tests": "Pruebas técnicas entregadas",
+      "testsNote": "Trabajo entregado, sin retroalimentación del evaluador.",
+      "experience": "Experiencia",
+      "experienceNote": "Nueve años, desde febrero de 2017.",
+      "technologies": "Tecnologías",
+      "technologiesNote": "Agrupadas por fuerza de evidencia, no por gusto.",
+      "training": "Formación",
+      "trainingNote": "Cédula profesional 12320388 · SEP.",
+      "contact": "Contacto"
+    },
+    "labels": {
+      "caseStudy": "Caso de estudio",
+      "liveDemo": "Ver en vivo",
+      "repo": "Repositorio",
+      "readDecisions": "Leer las decisiones",
+      "certificate": "Certificado",
+      "profile": "Perfil",
+      "stack": "Stack",
+      "role": "Rol",
+      "period": "Periodo",
+      "problem": "El problema",
+      "decisions": "Decisiones de arquitectura",
+      "responsibility": "Mi responsabilidad",
+      "outcome": "Resultado",
+      "honesty": "Alcance y límites",
+      "backToProjects": "Volver a proyectos",
+      "backToTests": "Volver a pruebas técnicas",
+      "noLinks": "Sin enlaces",
+      "theme": "Tema",
+      "themeToDark": "Oscuro",
+      "themeToLight": "Claro",
+      "language": "Idioma"
+    },
+    "contact": {
+      "title": "¿Hablamos de un rol?",
+      "lede": "Respondo en el día. Español nativo; inglés B1 intermedio certificado por EF SET, con lectura técnica B2.",
+      "siteColumn": "Sitio",
+      "profilesColumn": "Perfiles",
+      "locationColumn": "Ubicación"
+    },
+    "footer": {
+      "rights": "© 2026 Jose Gerardo Martínez Morán",
+      "colophon": "Sitio estático en GitHub Pages · sin analítica ni cookies"
+    },
+    "languages": "Español nativo · Inglés B1 intermedio (EF SET), lectura técnica B2",
+    "notFound": {
+      "title": "Página no encontrada",
+      "body": "El enlace que seguiste no existe o cambió de lugar.",
+      "cta": "Ir al inicio"
+    }
+  },
+  "en": {
+    "code": "en",
+    "other": "es",
+    "otherLabel": "ES",
+    "otherName": "Español",
+    "dir": "/en/",
+    "home": "Home",
+    "nav": {
+      "projects": "Projects",
+      "tests": "Technical tests",
+      "experience": "Experience",
+      "technologies": "Technologies",
+      "training": "Education",
+      "contact": "Contact"
+    },
+    "meta": {
+      "homeTitle": "Jose Gerardo Martínez Morán — Software engineer",
+      "homeDescription": "Software engineer with nine years of production experience. End-to-end web systems in TypeScript, React, Node and PostgreSQL, plus language-model orchestration in real systems.",
+      "skipToContent": "Skip to content"
+    },
+    "hero": {
+      "eyebrow": "Software engineer · 9 years in production",
+      "headline": "Nine years shipping web systems to production. Now with a language model at the wheel.",
+      "lede": "I build end to end with TypeScript, React, Node and PostgreSQL, on top of a long earlier base in PHP/Laravel and C#/ASP.NET. My AI work is orchestration and integration: defining tools, invoking them from an LLM, designing prompts, handling permissions and failure paths. No model training, no MLOps.",
+      "ctaProjects": "See projects",
+      "ctaCv": "Download CV",
+      "statusLabel": "Status",
+      "status": [
+        "Looking for: AI / agentic engineering",
+        "or senior full-stack",
+        "Remote or hybrid",
+        "I reply same day"
+      ]
+    },
+    "sections": {
+      "projects": "Projects",
+      "projectsNote": "Written case studies. Live demos will go up one project at a time.",
+      "tests": "Technical tests delivered",
+      "testsNote": "Work delivered; no feedback from the evaluator.",
+      "experience": "Experience",
+      "experienceNote": "Nine years, since February 2017.",
+      "technologies": "Technologies",
+      "technologiesNote": "Grouped by strength of evidence, not by preference.",
+      "training": "Education",
+      "trainingNote": "Professional licence 12320388 · SEP, Mexico.",
+      "contact": "Contact"
+    },
+    "labels": {
+      "caseStudy": "Case study",
+      "liveDemo": "View live",
+      "repo": "Repository",
+      "readDecisions": "Read the decisions",
+      "certificate": "Certificate",
+      "profile": "Profile",
+      "stack": "Stack",
+      "role": "Role",
+      "period": "Period",
+      "problem": "The problem",
+      "decisions": "Architecture decisions",
+      "responsibility": "What I did",
+      "outcome": "Outcome",
+      "honesty": "Scope and limits",
+      "backToProjects": "Back to projects",
+      "backToTests": "Back to technical tests",
+      "noLinks": "No links",
+      "theme": "Theme",
+      "themeToDark": "Dark",
+      "themeToLight": "Light",
+      "language": "Language"
+    },
+    "contact": {
+      "title": "Looking for someone for this?",
+      "lede": "I reply same day. Native Spanish; English at B1 intermediate, EF SET certified, with B2 technical reading.",
+      "siteColumn": "Site",
+      "profilesColumn": "Profiles",
+      "locationColumn": "Location"
+    },
+    "footer": {
+      "rights": "© 2026 Jose Gerardo Martínez Morán",
+      "colophon": "Static site on GitHub Pages · no analytics, no cookies"
+    },
+    "languages": "Native Spanish · English B1 intermediate (EF SET), B2 technical reading",
+    "notFound": {
+      "title": "Page not found",
+      "body": "That link does not exist or has moved.",
+      "cta": "Go to the homepage"
+    }
+  }
+}

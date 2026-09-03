@@ -1,0 +1,16 @@
+---
+layout: layout.njk
+lang: en
+kind: project
+pagination:
+  data: projects
+  size: 1
+  alias: item
+permalink: "/en/projects/{{ item.slug }}/index.html"
+eleventyComputed:
+  title: "{{ item.title | t('en') }} — {{ site.name }}"
+  description: "{{ item.summary | t('en') | truncate(158) }}"
+  pageUrl: "/en/projects/{{ item.slug }}/"
+  altUrl: "/proyectos/{{ item.slug }}/"
+---
+{% include "case-body.njk" %}

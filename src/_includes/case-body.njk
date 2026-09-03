@@ -1,0 +1,84 @@
+{%- set t = i18n[lang] -%}
+{%- set cs = item.caseStudy -%}
+
+<article class="case">
+  <div class="case__inner">
+
+    <header class="case__head">
+      <p class="case__eyebrow mono">{{ item.period | t(lang) }} · {{ item.org | t(lang) }}</p>
+      <h1 class="case__title">{{ item.title | t(lang) }}{% if item.status %} <span class="tag mono">{{ item.status | t(lang) }}</span>{% endif %}</h1>
+      <p class="case__lede">{{ item.summary | t(lang) }}</p>
+
+      <dl class="case__facts mono">
+        {% if item.role or item.roleEvaluated %}
+        <div><dt>{{ t.labels.role }}</dt><dd>{{ (item.role or item.roleEvaluated) | t(lang) }}</dd></div>
+        {% endif %}
+        <div><dt>{{ t.labels.period }}</dt><dd>{{ (item.period or item.date) | t(lang) }}</dd></div>
+        <div><dt>{{ t.labels.stack }}</dt><dd>{{ item.stack | join(" · ") }}</dd></div>
+      </dl>
+
+      <div class="case__actions">
+        {% if item.liveUrl %}
+        <a class="btn btn--accent mono" href="{{ item.liveUrl }}" rel="noopener">{{ t.labels.liveDemo }} →</a>
+        {% endif %}
+        {% if item.repoUrl %}
+        <a class="btn btn--outline mono" href="{{ item.repoUrl }}" rel="noopener">{{ t.labels.repo }}</a>
+        {% endif %}
+        {% if item.externalLinks == false %}
+        <p class="note mono"><span class="note__label">{{ t.labels.noLinks }}</span>{{ item.noLinksNote | t(lang) }}</p>
+        {% elif item.privateNote %}
+        <p class="note mono">{{ item.privateNote | t(lang) }}</p>
+        {% endif %}
+      </div>
+    </header>
+
+    <section class="case__block">
+      <h2 class="case__blockTitle mono">{{ t.labels.problem }}</h2>
+      <p>{{ cs.problem | t(lang) }}</p>
+    </section>
+
+    {% if cs.decisions.length %}
+    <section class="case__block">
+      <h2 class="case__blockTitle mono">{{ t.labels.decisions }}</h2>
+      <ol class="decisions">
+        {% for d in cs.decisions %}
+        <li class="decision">
+          <h3 class="decision__title">{{ d.title | t(lang) }}</h3>
+          <p>{{ d.body | t(lang) }}</p>
+        </li>
+        {% endfor %}
+      </ol>
+    </section>
+    {% endif %}
+
+    <section class="case__block">
+      <h2 class="case__blockTitle mono">{{ t.labels.responsibility }}</h2>
+      <p>{{ cs.responsibility | t(lang) }}</p>
+    </section>
+
+    <section class="case__block">
+      <h2 class="case__blockTitle mono">{{ t.labels.outcome }}</h2>
+      <p>{{ cs.outcome | t(lang) }}</p>
+      {% if item.metrics %}
+      <dl class="metrics metrics--wide">
+        {% for m in item.metrics %}
+        <div class="metrics__item">
+          <dd class="metrics__value">{{ m.value }}</dd>
+          <dt class="metrics__label mono">{{ m.label | t(lang) }}</dt>
+        </div>
+        {% endfor %}
+      </dl>
+      {% endif %}
+    </section>
+
+    <section class="case__block case__block--limits">
+      <h2 class="case__blockTitle mono">{{ t.labels.honesty }}</h2>
+      <p>{{ cs.limits | t(lang) }}</p>
+    </section>
+
+    <p class="case__back mono">
+      <a href="{{ lang | homeUrl | url }}#proyectos">← {{ t.labels.backToProjects }}</a>
+    </p>
+
+  </div>
+</article>

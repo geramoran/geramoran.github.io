@@ -1,0 +1,147 @@
+{%- set t = i18n[lang] -%}
+
+<section class="hero">
+  <div class="hero__inner">
+    <div class="hero__main">
+      <p class="hero__eyebrow mono">{{ t.hero.eyebrow }}</p>
+      <h1 class="hero__title">{{ t.hero.headline }}</h1>
+      <p class="hero__lede">{{ t.hero.lede }}</p>
+      <div class="hero__actions">
+        <a class="btn btn--solid mono" href="#proyectos">{{ t.hero.ctaProjects }}</a>
+        <a class="btn btn--outline mono" href="{{ site.cv | url }}" download>{{ t.hero.ctaCv }}</a>
+        <a class="hero__link mono" href="{{ site.linkedin }}" rel="me noopener">LinkedIn</a>
+        <a class="hero__link mono" href="{{ site.github }}" rel="me noopener">GitHub</a>
+        <a class="hero__link mono" href="mailto:{{ site.email }}">{{ site.email }}</a>
+      </div>
+    </div>
+    <aside class="hero__side mono" aria-label="{{ t.hero.statusLabel }}">
+      <p class="hero__sideTitle">{{ t.hero.statusLabel }}</p>
+      <ul>
+        {% for line in t.hero.status %}<li{% if loop.first %} class="is-accent"{% endif %}>{{ line }}</li>{% endfor %}
+      </ul>
+      <p class="hero__sideMeta">{{ site.location | t(lang) }} · {{ site.timezone }}</p>
+    </aside>
+  </div>
+</section>
+
+<section class="section" id="proyectos">
+  <div class="section__inner">
+    <div class="section__head">
+      <h2 class="section__title mono">§01 — {{ t.sections.projects }}</h2>
+      <p class="section__note mono">{{ t.sections.projectsNote }}</p>
+    </div>
+
+    {% for p in projects %}
+    <article class="proj">
+      <div class="proj__meta mono">
+        <p class="proj__period">{{ p.period | t(lang) }}</p>
+        <p>{{ p.org | t(lang) }}</p>
+        <p>{{ p.role | t(lang) }}</p>
+      </div>
+
+      <div class="proj__body">
+        <h3 class="proj__title">
+          <a href="{{ p.slug | projectUrl(lang) | url }}">{{ p.title | t(lang) }}</a>
+          {% if p.status %}<span class="tag mono">{{ p.status | t(lang) }}</span>{% endif %}
+        </h3>
+        <p class="proj__summary">{{ p.summary | t(lang) }}</p>
+
+        {% if p.metrics %}
+        <dl class="metrics">
+          {% for m in p.metrics %}
+          <div class="metrics__item">
+            <dd class="metrics__value">{{ m.value }}</dd>
+            <dt class="metrics__label mono">{{ m.label | t(lang) }}</dt>
+          </div>
+          {% endfor %}
+        </dl>
+        {% endif %}
+
+        <p class="proj__stack mono">{{ p.stack | join(" · ") }}</p>
+      </div>
+
+      <div class="proj__actions">
+        {% if p.liveUrl %}
+        <a class="btn btn--accent mono" href="{{ p.liveUrl }}" rel="noopener">{{ t.labels.liveDemo }} →</a>
+        {% endif %}
+        {% if p.repoUrl %}
+        <a class="btn btn--outline mono" href="{{ p.repoUrl }}" rel="noopener">{{ t.labels.repo }}</a>
+        {% endif %}
+        <a class="btn btn--solid mono" href="{{ p.slug | projectUrl(lang) | url }}">{{ t.labels.caseStudy }}</a>
+        {% if p.externalLinks == false %}
+        <p class="note mono"><span class="note__label">{{ t.labels.noLinks }}</span>{{ p.noLinksNote | t(lang) }}</p>
+        {% elif p.privateNote %}
+        <p class="note mono">{{ p.privateNote | t(lang) }}</p>
+        {% endif %}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section" id="experiencia">
+  <div class="section__inner">
+    <div class="section__head">
+      <h2 class="section__title mono">§02 — {{ t.sections.experience }}</h2>
+      <p class="section__note mono">{{ t.sections.experienceNote }}</p>
+    </div>
+    {% for job in experience %}
+    <article class="row">
+      <p class="row__meta mono">{{ job.period | t(lang) }}</p>
+      <div class="row__body">
+        <h3 class="row__title">{{ job.title | t(lang) }} · {{ job.org | t(lang) }}</h3>
+        <p class="row__text">{{ job.summary | t(lang) }}</p>
+        <p class="row__stack mono">{{ job.stack | join(" · ") }}</p>
+      </div>
+      <p class="row__aside mono">{{ job.place | t(lang) }}</p>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section" id="tecnologias">
+  <div class="section__inner">
+    <div class="section__head">
+      <h2 class="section__title mono">§03 — {{ t.sections.technologies }}</h2>
+      <p class="section__note mono">{{ t.sections.technologiesNote }}</p>
+    </div>
+    {% for group in technologies %}
+    <div class="techgroup">
+      <p class="techgroup__label mono is-{{ group.emphasis }}">{{ group.label | t(lang) }}</p>
+      <div class="techgroup__body">
+        {% if group.items.length %}
+        <ul class="chips">
+          {% for item in group.items %}<li class="chip mono is-{{ group.emphasis }}">{{ item }}</li>{% endfor %}
+        </ul>
+        {% endif %}
+        {% if group.note %}<p class="techgroup__note">{{ group.note | t(lang) }}</p>{% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section" id="formacion">
+  <div class="section__inner">
+    <div class="section__head">
+      <h2 class="section__title mono">§04 — {{ t.sections.training }}</h2>
+      <p class="section__note mono">{{ t.sections.trainingNote }}</p>
+    </div>
+    {% for item in training %}
+    <article class="row">
+      <p class="row__meta mono">{{ item.period | t(lang) }}</p>
+      <div class="row__body">
+        <h3 class="row__title">{{ item.title | t(lang) }}{% if item.org %} · {{ item.org | t(lang) }}{% endif %}</h3>
+        <p class="row__text">{{ item.summary | t(lang) }}</p>
+      </div>
+      <p class="row__aside mono">
+        {%- if item.certificateUrl -%}
+        <a href="{{ item.certificateUrl }}" rel="noopener">{{ t.labels.certificate }} →</a>
+        {%- elif item.place -%}
+        {{ item.place | t(lang) }}
+        {%- endif -%}
+      </p>
+    </article>
+    {% endfor %}
+  </div>
+</section>

@@ -1,0 +1,86 @@
+[
+  {
+    "title": {
+      "es": "Full-Stack Web & AI Developer Senior",
+      "en": "Senior Full-Stack Web & AI Developer"
+    },
+    "org": "MySourcing",
+    "period": { "es": "Mayo 2022 — julio 2026", "en": "May 2022 — July 2026" },
+    "place": { "es": "Acapulco de Juárez, Guerrero · remoto", "en": "Acapulco de Juárez, Guerrero · remote" },
+    "summary": {
+      "es": "Chat interno con orquestación de IA y portal de requisiciones con autorización multinivel (2025-2026). Anteriormente, módulos de nómina y gestión de personal multiempresa (2022-2024). Además, integraciones con Stripe con suscripciones recurrentes de membresía para un cliente en Next.js.",
+      "en": "Internal chat platform with AI orchestration and a requisitions portal with multi-level approval (2025-2026); before that, payroll and multi-company HR modules (2022-2024). Also a short Stripe integration with recurring membership subscriptions for a client, in Next.js."
+    },
+    "stack": ["TypeScript", "React", "Node.js", "Socket.io", "Prisma", "PostgreSQL", "Docker", "Claude Code", "AngularJS", "PHP/Laravel", "MySQL", "PHP", "Stripe", "Next.js", "Laravel 10"]
+  },
+  {
+    "title": {
+      "es": "Desarrollador Fullstack Mid TypeScript",
+      "en": "Mid-level Fullstack TypeScript Developer"
+    },
+    "org": "BOZ IT Development",
+    "period": { "es": "Enero — abril 2022", "en": "January — April 2022" },
+    "place": { "es": "Aguascalientes, México · remoto", "en": "Aguascalientes, Mexico · remote" },
+    "summary": {
+      "es": "Módulos para un sistema de proyección financiera multicliente, con lógica transaccional compleja y exigencia estricta de exactitud en cálculos. Corrección de bugs críticos en flujos de cálculo y validación de datos.",
+      "en": "Modules for a multi-client financial projection system, with complex transactional logic and strict accuracy requirements in calculations. Fixed critical bugs in calculation and data-validation flows."
+    },
+    "stack": ["TypeScript", "Node.js", "SQL Server", "DevExpress"]
+  },
+  {
+    "title": {
+      "es": "Webmaster Developer",
+      "en": "Webmaster Developer"
+    },
+    "org": "Básculas REVUELTA",
+    "period": { "es": "Julio 2021 — enero 2022", "en": "July 2021 — January 2022" },
+    "place": { "es": "Torreón, Coahuila", "en": "Torreón, Coahuila" },
+    "summary": {
+      "es": "Administración y mejora de los sitios del grupo con ASP.NET MVC, Umbraco y AngularJS. Instalación y administración de Magento para la tienda ganadera, con plugins propios en PHP.",
+      "en": "Administration and improvement of the group's websites with ASP.NET MVC, Umbraco and AngularJS. Installed and administered Magento for the livestock store, with in-house PHP plugins."
+    },
+    "stack": ["ASP.NET MVC", "Umbraco", "AngularJS", "Magento", "PHP", "MySQL", "SQL Server", "Docker", "C#", "ASP.NET Core"]
+  },
+  {
+    "title": {
+      "es": "Freelance Full-Stack Developer — proyecto ATT / ProntoForms",
+      "en": "Freelance Full-Stack Developer — ATT / ProntoForms project"
+    },
+    "org": { "es": "Independiente", "en": "Independent" },
+    "period": { "es": "Noviembre 2020 — junio 2021", "en": "November 2020 — June 2021" },
+    "place": { "es": "Remoto", "en": "Remote" },
+    "summary": {
+      "es": "Desarrollador único de una plataforma de gestión de almacén y entregas, desde la arquitectura hasta producción: inventario, logística, webhooks de campo y reportes programados. Entre 50 y 200 paquetes diarios con más de 12 repartidores activos.",
+      "en": "Sole developer of a warehouse and delivery management platform, from architecture to production: inventory, logistics, field webhooks and scheduled reports. Between 50 and 200 packages a day with more than 12 active drivers."
+    },
+    "stack": ["PHP 8", "Laravel 8", "Vue.js", "MySQL", "Redis", "Docker", "AWS S3"]
+  },
+  {
+    "title": {
+      "es": "Analista de Desarrollo",
+      "en": "Development Analyst"
+    },
+    "org": "Grupo Batta Hermanos",
+    "period": { "es": "Septiembre 2019 — octubre 2020", "en": "September 2019 — October 2020" },
+    "place": { "es": "Torreón, Coahuila", "en": "Torreón, Coahuila" },
+    "summary": {
+      "es": "Analisis, desarrollo y despliegue dos aplicaciones móviles (Ionic + AngularJS), un sitio web (Node.js + VueJS) y un servicio web (ASP.NET MVC Core + C#) para dar de alta distribuidores de vales y supervisar personal de campo; aumentó la cuota de distribuidores y redujo tiempos de procesamiento. Manejo de datos sensibles de crédito directo en SQL Server (T-SQL) y mantenimiento de plugins del ERP VisCoi en Visual Basic 6.0.",
+      "en": "Analysed, built and deployed two mobile apps (Ionic + AngularJS), a website (Node.js + VueJS) and a web service (ASP.NET MVC Core + C#) to register voucher distributors and supervise field staff; it increased the distributor quota and cut processing times. Handled sensitive direct-credit data in SQL Server (T-SQL) and maintained VisCoi ERP plugins written in Visual Basic 6.0."
+    },
+    "stack": ["Ionic", "AngularJS", "Node.js", "VueJS", "ASP.NET MVC Core", "C#", "SQL Server", "Visual Basic 6.0"]
+  },
+  {
+    "title": {
+      "es": "Desarrollador Web y .NET",
+      "en": "Web and .NET Developer"
+    },
+    "org": "Asta Software",
+    "period": { "es": "Febrero 2017 — abril 2019", "en": "February 2017 — April 2019" },
+    "place": { "es": "Torreón, Coahuila", "en": "Torreón, Coahuila" },
+    "summary": {
+      "es": "Desarrollé, desplegué y mantuve sistemas de punto de venta con facturación electrónica e integraciones de recarga de tiempo aire, en C# y Windows Forms contra SQL Server LocalDB; hoy es una de las principales líneas de ingreso de la empresa. También sitios dinámicos en PHP y Laravel, y e-commerce sobre Aimeos con pasarelas PayPal y Conekta.",
+      "en": "Built, deployed and maintained point-of-sale systems with electronic invoicing and airtime top-up integrations, in C# and Windows Forms against SQL Server LocalDB; today it is one of the company's main revenue lines. Also dynamic sites in PHP and Laravel, and e-commerce on Aimeos with PayPal and Conekta payment gateways."
+    },
+    "stack": ["C#", ".NET Framework", "Windows Forms", "SQL Server", "PHP", "Laravel", "Aimeos"]
+  }
+]

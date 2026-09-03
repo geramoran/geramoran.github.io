@@ -1,0 +1,58 @@
+[
+  {
+    "title": {
+      "es": "Ingeniero en Informática · Mención honorífica",
+      "en": "Bachelor's degree in Computer Engineering · Honourable mention"
+    },
+    "org": "Instituto Tecnológico Superior de Lerdo",
+    "period": { "es": "2010 — 2018", "en": "2010 — 2018" },
+    "summary": {
+      "es": "Estudios de 2010 a 2015, acto recepcional el 16 de octubre de 2017 y título expedido el 22 de marzo de 2018. Cédula profesional 12320388 (SEP), expedida el 31 de mayo de 2021.",
+      "en": "Studies from 2010 to 2015, thesis defence on 16 October 2017 and degree issued on 22 March 2018. Professional licence 12320388 (SEP, Mexico), issued 31 May 2021."
+    },
+    "place": { "es": "Lerdo, Durango", "en": "Lerdo, Durango" },
+    "certificateUrl": null
+  },
+  {
+    "title": {
+      "es": "LangChain, LangGraph y Agentes IA con Python",
+      "en": "LangChain, LangGraph and AI Agents with Python"
+    },
+    "org": "Udemy",
+    "period": { "es": "Mayo de 2026", "en": "May 2026" },
+    "summary": {
+      "es": "Curso completo, 18 horas.",
+      "en": "Full course, 18 hours."
+    },
+    "place": null,
+    "certificateUrl": null
+  },
+  {
+    "title": {
+      "es": "Platzi · alrededor de 90 certificados",
+      "en": "Platzi · around 90 certificates"
+    },
+    "org": "Platzi",
+    "period": { "es": "En curso", "en": "Ongoing" },
+    "summary": {
+      "es": "Los relevantes para este perfil: Claude AI (×2), Herramientas de AI para Developers, Prompt Engineering, Introducción al Desarrollo Backend, Fundamentos de Node.js, Docker (×2) y Patrones de Diseño y Buenas Prácticas en PHP.",
+      "en": "The ones relevant to this profile: Claude AI (×2), AI Tools for Developers, Prompt Engineering, Introduction to Backend Development, Node.js Fundamentals, Docker (×2) and Design Patterns and Best Practices in PHP."
+    },
+    "place": null,
+    "certificateUrl": null
+  },
+  {
+    "title": {
+      "es": "EF SET English Certificate — 41/100, B1 intermedio",
+      "en": "EF SET English Certificate — 41/100, B1 intermediate"
+    },
+    "org": "EF SET",
+    "period": { "es": "Mayo de 2025", "en": "May 2025" },
+    "summary": {
+      "es": "Lectura B2 · habla B1 · escritura A2 · comprensión auditiva A2. En mejora activa; prefiero que un reclutador lo sepa antes de una llamada, no durante.",
+      "en": "Reading B2 · speaking B1 · writing A2 · listening A2. Actively improving; I would rather a recruiter know this before a call than during one."
+    },
+    "place": null,
+    "certificateUrl": null
+  }
+]

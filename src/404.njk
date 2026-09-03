@@ -1,0 +1,20 @@
+---
+layout: layout.njk
+lang: es
+permalink: /404.html
+pageUrl: /404.html
+eleventyExcludeFromCollections: true
+eleventyComputed:
+  title: "{{ i18n.es.notFound.title }} — {{ site.name }}"
+  description: "{{ i18n.es.notFound.body }}"
+---
+<section class="section">
+  <div class="section__inner">
+    <h1 class="hero__title">{{ i18n.es.notFound.title }}</h1>
+    <p class="hero__lede">{{ i18n.es.notFound.body }}</p>
+    <p class="hero__actions">
+      <a class="btn btn--solid mono" href="{{ '/' | url }}">{{ i18n.es.notFound.cta }}</a>
+      <a class="btn btn--outline mono" href="{{ '/en/' | url }}" lang="en">{{ i18n.en.notFound.cta }}</a>
+    </p>
+  </div>
+</section>

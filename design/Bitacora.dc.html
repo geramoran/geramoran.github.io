@@ -1,0 +1,318 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&amp;family=Archivo:wght@400;500;600&amp;display=swap">
+  <style>
+    body { margin: 0; background: #FBF7EF; font-family: "Newsreader", Georgia, serif; }
+    .t-light { --bg: #FBF7EF; --panel: #FFFDF8; --ink: #1B1A17; --soft: #4B4741; --muted: #A79E90; --faint: #BFB6A6; --rule: #DCD4C6; --rule2: #EAE3D6; --accent: #2C4B7C; --inv-bg: #1B1A17; --inv-ink: #F2EDE3; --inv-soft: #A79E90; --inv-rule: #3A362F; --inv-accent: #E8C48A; --on-accent: #FBF7EF; }
+    .t-dark  { --bg: #16150F; --panel: #1D1B15; --ink: #F2EDE3; --soft: #C6BFB2; --muted: #8A8175; --faint: #6B6558; --rule: #33302A; --rule2: #26241F; --accent: #9BBAE8; --inv-bg: #0F0E0A; --inv-ink: #F2EDE3; --inv-soft: #A79E90; --inv-rule: #2A2822; --inv-accent: #E8C48A; --on-accent: #16150F; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { opacity: 0.72; }
+    .meta { font-family: "Archivo", "Helvetica Neue", Arial, sans-serif; }
+  </style>
+</helmet>
+
+<div class="page {{themeClass}}" style="width: 1440px; box-sizing: border-box; background: var(--bg); color: var(--ink); min-height: 100vh;">
+
+  <div style="position: sticky; top: 0; display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 18px 80px; background: var(--bg); border-bottom: 1px solid var(--rule); z-index: 10;">
+    <div style="font-size: 20px; letter-spacing: -0.01em;">Gerardo Martínez</div>
+    <div class="meta" style="display: flex; align-items: center; gap: 26px; font-size: 13px;">
+      <a href="#" style="color: var(--ink); border-bottom: 1px solid var(--accent); padding-bottom: 2px;">Trabajo</a>
+      <a href="#" style="color: var(--soft);">Pruebas técnicas</a>
+      <a href="#" style="color: var(--soft);">Trayectoria</a>
+      <a href="#" style="color: var(--soft);">Tecnologías</a>
+      <a href="#" style="color: var(--soft);">Formación</a>
+      <a href="#" style="color: var(--soft);">Contacto</a>
+    </div>
+    <div class="meta" style="display: flex; align-items: center; gap: 12px; font-size: 12px;">
+      <span style="color: var(--muted);">ES · <a href="#" style="color: var(--muted);">EN</a></span>
+      <div onClick="{{toggleTheme}}" style="display: flex; align-items: center; gap: 7px; border: 1px solid var(--rule); border-radius: 999px; color: var(--ink); padding: 6px 13px; cursor: pointer;">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8"></circle><path d="M12 4 A8 8 0 0 1 12 20 Z" fill="currentColor" stroke="none"></path></svg>
+        <span>{{themeLabel}}</span>
+      </div>
+      <a href="#" style="border: 1px solid var(--ink); color: var(--ink); border-radius: 999px; padding: 6px 15px;">CV</a>
+    </div>
+  </div>
+
+  <div style="padding: 88px 80px 64px 80px; display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 80px; align-items: end; border-bottom: 1px solid var(--rule);">
+    <div>
+      <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 30px;">
+        <div style="width: 68px; height: 68px; flex-shrink: 0; border-radius: 999px; border: 1px solid var(--rule); display: flex; align-items: center; justify-content: center; font-size: 24px; letter-spacing: 0.02em; color: var(--soft);">JG</div>
+        <div class="meta" style="font-size: 11px; line-height: 1.9; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);">Ingeniero en informática<br>Torreón, Coahuila, México · GMT-6</div>
+      </div>
+      <h1 style="margin: 0 0 26px 0; font-size: 88px; line-height: 1; font-weight: 300; letter-spacing: -0.035em; max-width: 880px; text-wrap: pretty;">Nueve años poniendo software en producción.</h1>
+      <p style="margin: 0; font-size: 26px; line-height: 1.45; font-weight: 300; font-style: italic; color: var(--soft); max-width: 680px;">Los últimos dos, enseñándole a un modelo de lenguaje a operar los sistemas que construyo.</p>
+    </div>
+    <div>
+      <p class="meta" style="margin: 0 0 24px 0; font-size: 14px; line-height: 1.8; color: var(--soft);">TypeScript, React, Node y PostgreSQL, con base profunda previa en PHP/Laravel y C#/ASP.NET. Con IA hago orquestación e integración: herramientas invocables, permisos y caminos de falla. No entrenamiento de modelos ni MLOps.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center;">
+        <a href="#" class="meta" style="background: var(--ink); color: var(--bg); padding: 12px 20px; font-size: 13px;">Ver el trabajo</a>
+        <a href="#" class="meta" style="border: 1px solid var(--rule); color: var(--ink); padding: 12px 20px; font-size: 13px;">CV en PDF</a>
+      </div>
+      <div class="meta" style="display: flex; gap: 18px; padding-top: 16px; font-size: 13px;">
+        <a href="#">LinkedIn</a>
+        <a href="#">GitHub</a>
+        <a href="#">Correo</a>
+      </div>
+      <div class="meta" style="font-size: 12px; color: var(--faint); padding-top: 14px; line-height: 1.6;">[Avatar: monograma provisional. Decides si va foto.]</div>
+    </div>
+  </div>
+
+  <div style="padding: 72px 80px 0 80px;">
+    <div class="meta" style="display: flex; align-items: baseline; justify-content: space-between; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--rule); padding-bottom: 12px;">
+      <span>Trabajo seleccionado</span>
+      <span>Cuatro entradas</span>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 88px minmax(0, 1fr) 300px; gap: 56px; padding: 56px 0; border-bottom: 1px solid var(--rule); align-items: start;">
+      <div style="font-size: 64px; line-height: 0.8; font-weight: 300; color: var(--faint); letter-spacing: -0.04em;">01</div>
+      <div>
+        <div class="meta" style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px;">2026 — en curso · en solitario</div>
+        <h2 style="margin: 0 0 18px 0; font-size: 48px; line-height: 1.06; font-weight: 400; letter-spacing: -0.025em; max-width: 640px;">CostoPreciso: escribir la especificación antes que el código</h2>
+        <p style="margin: 0 0 18px 0; font-size: 20px; line-height: 1.65; max-width: 620px; text-wrap: pretty;"><span style="float: left; font-size: 66px; line-height: 0.8; padding: 6px 10px 0 0; font-weight: 400;">U</span>na plataforma SaaS multi-tenant de costeo para PYMEs mexicanas de cualquier giro. Antes de la primera línea escribí una constitución con principios no negociables: motor puro sin importar infraestructura, fórmulas deterministas trazables a su sección numerada, vocabulario agnóstico al giro, multi-tenant desde el día cero.</p>
+        <p style="margin: 0 0 24px 0; font-size: 20px; line-height: 1.65; max-width: 620px; text-wrap: pretty;">Dieciséis features pasaron por spec, plan y tasks antes de existir: casi quince mil líneas de especificación. El motor vive en TypeScript puro, un archivo por sección de fórmulas, con 346 tests en verde.</p>
+        <div class="meta" style="border: 1px solid var(--rule); background: var(--panel); padding: 14px 18px; font-size: 13px; line-height: 1.7; color: var(--soft); max-width: 620px;">
+          <span style="letter-spacing: 0.16em; text-transform: uppercase; font-size: 11px; color: var(--muted);">Sin enlaces</span><br>
+          Proyecto privado: no hay repositorio público, demo ni capturas. Lo describo aquí; no lo muestro.
+        </div>
+      </div>
+      <div style="border-left: 2px solid var(--accent); padding-left: 24px;">
+        <p style="margin: 0 0 12px 0; font-size: 24px; line-height: 1.4; font-style: italic; font-weight: 300;">El despliegue destapó seis bugs que la suite completa en verde no detectó.</p>
+        <p class="meta" style="margin: 0 0 16px 0; font-size: 13px; line-height: 1.7; color: var(--soft);">Ningún test ejercitaba producción de verdad. Los documenté uno por uno, incluida la reversión de un cambio de manualChunks que dejó la pantalla en blanco.</p>
+        <div class="meta" style="font-size: 11px; line-height: 1.9; color: var(--muted); letter-spacing: 0.04em;">NESTJS · DRIZZLE · POSTGRESQL · REACT 18 · VITE · TAILWIND · UBUNTU 24.04</div>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 88px minmax(0, 1fr) 300px; gap: 56px; padding: 56px 0; border-bottom: 1px solid var(--rule); align-items: start;">
+      <div style="font-size: 64px; line-height: 0.8; font-weight: 300; color: var(--faint); letter-spacing: -0.04em;">02</div>
+      <div>
+        <div class="meta" style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px;">2025 — 2026 · MySourcing</div>
+        <h2 style="margin: 0 0 18px 0; font-size: 48px; line-height: 1.06; font-weight: 400; letter-spacing: -0.025em; max-width: 640px;">Una suite de productos, expuesta como herramientas para un LLM</h2>
+        <p style="margin: 0 0 24px 0; font-size: 20px; line-height: 1.65; max-width: 620px; text-wrap: pretty;">Arquitecté un chat web centralizado que funciona como hub de API unificado entre varios productos internos y externos, multitenant con aislamiento por empresa: tiempo real con Socket.io, archivos cifrados de extremo a extremo cruzando fronteras de tenant, rate limiting sobre las APIs. Encima construí la capa de orquestación que expone esos productos como herramientas invocables, automatizando flujos que antes pedían coordinación manual entre sistemas.</p>
+        <div style="display: flex; gap: 12px; align-items: center;">
+          <a href="#" class="meta" style="background: var(--accent); color: var(--on-accent); padding: 12px 20px; font-size: 13px;">Leer el caso completo</a>
+          <span class="meta" style="font-size: 12px; color: var(--muted);">Bajo NDA: arquitectura narrada, sin código ni capturas</span>
+        </div>
+      </div>
+      <div style="border-left: 1px solid var(--rule); padding-left: 24px;">
+        <div class="meta" style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px;">También ahí</div>
+        <p class="meta" style="margin: 0 0 14px 0; font-size: 13px; line-height: 1.75; color: var(--soft);">Portal de requisiciones: ciclo completo de compra con autorización multinivel, proveedores y pagos, más correo transaccional con órdenes y avisos de entrega.</p>
+        <p class="meta" style="margin: 0; font-size: 13px; line-height: 1.75; color: var(--soft);">Integración de Stripe con suscripciones recurrentes de membresía para un cliente, en Next.js. Compromiso breve: exposición reciente a pasarelas, no profundidad.</p>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 88px minmax(0, 1fr) 300px; gap: 56px; padding: 56px 0; border-bottom: 1px solid var(--rule); align-items: start;">
+      <div style="font-size: 64px; line-height: 0.8; font-weight: 300; color: var(--faint); letter-spacing: -0.04em;">03</div>
+      <div>
+        <div class="meta" style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px;">2020 — 2021 · Freelance, ATT / ProntoForms</div>
+        <h2 style="margin: 0 0 18px 0; font-size: 48px; line-height: 1.06; font-weight: 400; letter-spacing: -0.025em; max-width: 640px;">Cincuenta a doscientos paquetes al día</h2>
+        <p style="margin: 0 0 24px 0; font-size: 20px; line-height: 1.65; max-width: 620px; text-wrap: pretty;">Diseñé, construí y desplegué solo una plataforma de almacén y entregas: inventario con conteos ciegos y reporte automático de discrepancias, logística con manifiestos en PDF y trazabilidad por unidad, webhooks de ProntoForms procesando coordenadas GPS y fotos de campo en tiempo real. Doce repartidores la usaron todos los días.</p>
+        <a href="#" class="meta" style="background: var(--accent); color: var(--on-accent); padding: 12px 20px; font-size: 13px;">Leer el caso completo</a>
+      </div>
+      <div style="border-left: 1px solid var(--rule); padding-left: 24px;">
+        <div class="meta" style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px;">Escala real</div>
+        <div style="font-size: 46px; line-height: 1; font-weight: 300; letter-spacing: -0.03em;">50–200</div>
+        <div class="meta" style="font-size: 12px; color: var(--soft); margin-bottom: 16px;">paquetes diarios</div>
+        <div style="font-size: 46px; line-height: 1; font-weight: 300; letter-spacing: -0.03em;">12</div>
+        <div class="meta" style="font-size: 12px; color: var(--soft);">repartidores activos</div>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 88px minmax(0, 1fr) 300px; gap: 56px; padding: 56px 0; border-bottom: 1px solid var(--rule); align-items: start;">
+      <div style="font-size: 64px; line-height: 0.8; font-weight: 300; color: var(--faint); letter-spacing: -0.04em;">04</div>
+      <div>
+        <div class="meta" style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px;">2018 · Independiente</div>
+        <h2 style="margin: 0 0 18px 0; font-size: 48px; line-height: 1.06; font-weight: 400; letter-spacing: -0.025em; max-width: 640px;">Elvira Richards, una página de talento hecha a mano</h2>
+        <p style="margin: 0 0 24px 0; font-size: 20px; line-height: 1.65; max-width: 620px; text-wrap: pretty;">Tema PHP a la medida sobre WordPress para la promotora de talento Elvira Richards, con módulos propios, plugins de terceros y mantenimiento del servidor. Corrió en paralelo a mi puesto en Asta Software y sigue en línea.</p>
+        <div style="display: flex; gap: 12px; align-items: center;">
+          <a href="#" class="meta" style="background: var(--accent); color: var(--on-accent); padding: 12px 20px; font-size: 13px;">Ver el sitio en vivo →</a>
+          <a href="#" class="meta" style="border: 1px solid var(--rule); color: var(--ink); padding: 12px 20px; font-size: 13px;">Leer el caso</a>
+        </div>
+      </div>
+      <div style="border-left: 1px solid var(--rule); padding-left: 24px;">
+        <div class="meta" style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px;">Stack</div>
+        <div class="meta" style="font-size: 13px; line-height: 1.9; color: var(--soft);">WordPress · PHP · MySQL · Administración de servidor</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding: 64px 80px 0 80px;">
+    <div class="meta" style="display: flex; align-items: baseline; justify-content: space-between; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--rule); padding-bottom: 12px; margin-bottom: 40px;">
+      <span>Pruebas técnicas entregadas</span>
+      <span>Trabajo entregado · sin retroalimentación del evaluador</span>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px;">
+      <div>
+        <div class="meta" style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px;">Junio 2026 · CuatroD Studios</div>
+        <h3 style="margin: 0 0 12px 0; font-size: 32px; line-height: 1.15; font-weight: 400; letter-spacing: -0.02em;">Un agente que sabe cuándo callarse</h3>
+        <p style="margin: 0 0 14px 0; font-size: 18px; line-height: 1.6; color: var(--soft);">Cuando alguien escribe tres mensajes seguidos, el agente responde una sola vez: cada ejecución escribe su timestamp en una fila compartida, espera y vuelve a leer; solo sigue la más reciente. Coordinación por datos, sin colas ni bloqueos.</p>
+        <a href="#" class="meta" style="font-size: 13px;">Las tres decisiones →</a>
+      </div>
+      <div>
+        <div class="meta" style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px;">Agosto 2026 · LexCore</div>
+        <h3 style="margin: 0 0 12px 0; font-size: 32px; line-height: 1.15; font-weight: 400; letter-spacing: -0.02em;">Prueba de PHP y Laravel</h3>
+        <p style="margin: 0 0 14px 0; font-size: 18px; line-height: 1.6; color: var(--soft);">Mi evidencia más reciente de profundidad en Laravel. <span style="color: var(--faint);">[Pendiente de redactar contigo: los detalles no vienen en el brief.]</span></p>
+        <a href="#" class="meta" style="font-size: 13px;">Leer la entrada →</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding: 64px 80px 0 80px;">
+    <div class="meta" style="display: flex; align-items: baseline; justify-content: space-between; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--rule); padding-bottom: 12px;">
+      <span>Trayectoria</span>
+      <span>Nueve años, desde febrero de 2017</span>
+    </div>
+    <div style="display: grid; grid-template-columns: 200px minmax(0, 1fr) 240px; gap: 40px; padding: 24px 0; border-bottom: 1px solid var(--rule2); align-items: baseline;">
+      <div class="meta" style="font-size: 13px; color: var(--muted);">2022 — 2026</div>
+      <div>
+        <div style="font-size: 24px; font-weight: 400; margin-bottom: 6px;">Full-Stack Web &amp; AI Developer Senior</div>
+        <div class="meta" style="font-size: 14px; line-height: 1.6; color: var(--soft); max-width: 620px;">Chat interno con orquestación de IA, portal de requisiciones con autorización multinivel y, antes, módulos de nómina y gestión de personal multiempresa.</div>
+      </div>
+      <div class="meta" style="font-size: 13px; color: var(--muted); text-align: right;">MySourcing · remoto</div>
+    </div>
+    <div style="display: grid; grid-template-columns: 200px minmax(0, 1fr) 240px; gap: 40px; padding: 24px 0; border-bottom: 1px solid var(--rule2); align-items: baseline;">
+      <div class="meta" style="font-size: 13px; color: var(--muted);">2022</div>
+      <div>
+        <div style="font-size: 24px; font-weight: 400; margin-bottom: 6px;">Desarrollador Fullstack Mid TypeScript</div>
+        <div class="meta" style="font-size: 14px; line-height: 1.6; color: var(--soft); max-width: 620px;">Módulos de proyección financiera multicliente con lógica transaccional compleja y exigencia estricta de exactitud.</div>
+      </div>
+      <div class="meta" style="font-size: 13px; color: var(--muted); text-align: right;">BOZ IT Development</div>
+    </div>
+    <div style="display: grid; grid-template-columns: 200px minmax(0, 1fr) 240px; gap: 40px; padding: 24px 0; border-bottom: 1px solid var(--rule2); align-items: baseline;">
+      <div class="meta" style="font-size: 13px; color: var(--muted);">2021 — 2022</div>
+      <div>
+        <div style="font-size: 24px; font-weight: 400; margin-bottom: 6px;">Webmaster Developer</div>
+        <div class="meta" style="font-size: 14px; line-height: 1.6; color: var(--soft); max-width: 620px;">Sitios del grupo en ASP.NET MVC, Umbraco y AngularJS; Magento con plugins propios en PHP.</div>
+      </div>
+      <div class="meta" style="font-size: 13px; color: var(--muted); text-align: right;">Básculas REVUELTA</div>
+    </div>
+    <div style="display: grid; grid-template-columns: 200px minmax(0, 1fr) 240px; gap: 40px; padding: 24px 0; border-bottom: 1px solid var(--rule2); align-items: baseline;">
+      <div class="meta" style="font-size: 13px; color: var(--muted);">2019 — 2020</div>
+      <div>
+        <div style="font-size: 24px; font-weight: 400; margin-bottom: 6px;">Analista de Desarrollo</div>
+        <div class="meta" style="font-size: 14px; line-height: 1.6; color: var(--soft); max-width: 620px;">Dos apps móviles, un sitio y un servicio web para alta de distribuidores y supervisión de campo; aumentó la cuota de distribuidores.</div>
+      </div>
+      <div class="meta" style="font-size: 13px; color: var(--muted); text-align: right;">Grupo Batta Hermanos</div>
+    </div>
+    <div style="display: grid; grid-template-columns: 200px minmax(0, 1fr) 240px; gap: 40px; padding: 24px 0; border-bottom: 1px solid var(--rule2); align-items: baseline;">
+      <div class="meta" style="font-size: 13px; color: var(--muted);">2017 — 2019</div>
+      <div>
+        <div style="font-size: 24px; font-weight: 400; margin-bottom: 6px;">Desarrollador Web y .NET</div>
+        <div class="meta" style="font-size: 14px; line-height: 1.6; color: var(--soft); max-width: 620px;">Punto de venta con facturación electrónica y recargas en C#: hoy es una de las principales líneas de ingreso de la empresa.</div>
+      </div>
+      <div class="meta" style="font-size: 13px; color: var(--muted); text-align: right;">Asta Software</div>
+    </div>
+  </div>
+
+  <div style="padding: 64px 80px 0 80px;">
+    <div class="meta" style="display: flex; align-items: baseline; justify-content: space-between; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--rule); padding-bottom: 12px;">
+      <span>Tecnologías</span>
+      <span>Agrupadas por fuerza de evidencia</span>
+    </div>
+    <div style="display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 16px 40px; padding: 22px 0; border-bottom: 1px solid var(--rule2); align-items: start;">
+      <div class="meta" style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;">5+ años en producción</div>
+      <div style="font-size: 19px; line-height: 1.6;">PHP / Laravel · C# / ASP.NET MVC · JavaScript / jQuery · MySQL · SQL Server (T-SQL) · VueJS · AngularJS · HTML / CSS / Bootstrap</div>
+    </div>
+    <div style="display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 16px 40px; padding: 22px 0; border-bottom: 1px solid var(--rule2); align-items: start;">
+      <div class="meta" style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;">Reciente · 2022 — 2026</div>
+      <div style="font-size: 19px; line-height: 1.6;">TypeScript · ReactJS · Node.js / Express · Prisma ORM · PostgreSQL · Socket.io · Tailwind · Docker</div>
+    </div>
+    <div style="display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 16px 40px; padding: 22px 0; border-bottom: 1px solid var(--rule2); align-items: start;">
+      <div class="meta" style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted);">Exposición más estrecha</div>
+      <div style="font-size: 19px; line-height: 1.6; color: var(--soft);">LangChain · LangGraph · Claude API · Python · Next.js · Redis · AWS S3 · RxJS</div>
+    </div>
+    <div style="display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 16px 40px; padding: 22px 0; border-bottom: 1px solid var(--rule2); align-items: start;">
+      <div class="meta" style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent);">Un proyecto, no años</div>
+      <div style="font-size: 19px; line-height: 1.6;">n8n — un agente conversacional construido y documentado de extremo a extremo, junio de 2026.</div>
+    </div>
+    <div style="display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 16px 40px; padding: 22px 0; border-bottom: 1px solid var(--rule2); align-items: start;">
+      <div class="meta" style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted);">Metodología</div>
+      <div style="font-size: 19px; line-height: 1.6; color: var(--soft);">Agentic engineering a diario con Claude Code · desarrollo guiado por especificación con Spec-kit · Git con ramas, PRs y code review · Linux y servicios contenerizados</div>
+    </div>
+    <div style="display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 16px 40px; padding: 22px 0; border-bottom: 1px solid var(--rule2); align-items: start;">
+      <div class="meta" style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted);">Legacy, capaz de mantener</div>
+      <div style="font-size: 19px; line-height: 1.6; color: var(--soft);">Visual Basic 6.0 · Firebird · Magento · Umbraco · WordPress · Ionic · DevExpress</div>
+    </div>
+  </div>
+
+  <div style="padding: 64px 80px 0 80px;">
+    <div class="meta" style="display: flex; align-items: baseline; justify-content: space-between; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--rule); padding-bottom: 12px;">
+      <span>Formación</span>
+      <span>Cédula profesional 12320388 · SEP</span>
+    </div>
+    <div style="display: grid; grid-template-columns: 200px minmax(0, 1fr) 240px; gap: 40px; padding: 24px 0; border-bottom: 1px solid var(--rule2); align-items: baseline;">
+      <div class="meta" style="font-size: 13px; color: var(--muted);">2010 — 2018</div>
+      <div>
+        <div style="font-size: 24px; font-weight: 400; margin-bottom: 6px;">Ingeniero en Informática · Mención honorífica</div>
+        <div class="meta" style="font-size: 14px; line-height: 1.6; color: var(--soft);">Instituto Tecnológico Superior de Lerdo, Durango. Acto recepcional en octubre de 2017; título expedido en marzo de 2018.</div>
+      </div>
+      <div class="meta" style="font-size: 13px; color: var(--muted); text-align: right;">Durango, MX</div>
+    </div>
+    <div style="display: grid; grid-template-columns: 200px minmax(0, 1fr) 240px; gap: 40px; padding: 24px 0; border-bottom: 1px solid var(--rule2); align-items: baseline;">
+      <div class="meta" style="font-size: 13px; color: var(--muted);">Mayo 2026</div>
+      <div>
+        <div style="font-size: 24px; font-weight: 400; margin-bottom: 6px;">LangChain, LangGraph y Agentes IA con Python</div>
+        <div class="meta" style="font-size: 14px; line-height: 1.6; color: var(--soft);">Udemy · curso completo de 18 horas.</div>
+      </div>
+      <div class="meta" style="font-size: 13px; text-align: right;"><a href="#">Certificado →</a></div>
+    </div>
+    <div style="display: grid; grid-template-columns: 200px minmax(0, 1fr) 240px; gap: 40px; padding: 24px 0; border-bottom: 1px solid var(--rule2); align-items: baseline;">
+      <div class="meta" style="font-size: 13px; color: var(--muted);">En curso</div>
+      <div>
+        <div style="font-size: 24px; font-weight: 400; margin-bottom: 6px;">Platzi · alrededor de 90 certificados</div>
+        <div class="meta" style="font-size: 14px; line-height: 1.6; color: var(--soft);">Relevantes: Claude AI (×2), Herramientas de AI para Developers, Prompt Engineering, Backend, Node.js, Docker (×2), Patrones de diseño en PHP.</div>
+      </div>
+      <div class="meta" style="font-size: 13px; text-align: right;"><a href="#">Perfil →</a></div>
+    </div>
+    <div style="display: grid; grid-template-columns: 200px minmax(0, 1fr) 240px; gap: 40px; padding: 24px 0; border-bottom: 1px solid var(--rule2); align-items: baseline;">
+      <div class="meta" style="font-size: 13px; color: var(--muted);">Mayo 2025</div>
+      <div>
+        <div style="font-size: 24px; font-weight: 400; margin-bottom: 6px;">EF SET English Certificate — B1 intermedio</div>
+        <div class="meta" style="font-size: 14px; line-height: 1.6; color: var(--soft);">41/100. Lectura B2 · habla B1 · escritura A2 · comprensión auditiva A2. En mejora activa.</div>
+      </div>
+      <div class="meta" style="font-size: 13px; text-align: right;"><a href="#">Certificado →</a></div>
+    </div>
+  </div>
+
+  <div style="padding: 88px 80px 64px 80px; margin-top: 56px; background: var(--inv-bg); color: var(--inv-ink);">
+    <div style="display: grid; grid-template-columns: minmax(0, 1fr) 420px; gap: 80px; align-items: start; padding-bottom: 48px; border-bottom: 1px solid var(--inv-rule);">
+      <div>
+        <h2 style="margin: 0 0 20px 0; font-size: 56px; line-height: 1.04; font-weight: 300; letter-spacing: -0.03em; max-width: 620px;">Si algo de esto te sirve, escríbeme.</h2>
+        <a href="#" style="font-size: 26px; color: var(--inv-accent); border-bottom: 1px solid var(--inv-rule); padding-bottom: 4px;">geramtz100@gmail.com</a>
+      </div>
+      <div class="meta" style="font-size: 14px; line-height: 1.9; color: var(--inv-soft);">
+        <div style="letter-spacing: 0.18em; text-transform: uppercase; font-size: 11px; margin-bottom: 10px;">Enlaces</div>
+        <div><a href="#" style="color: var(--inv-ink);">LinkedIn</a> · <a href="#" style="color: var(--inv-ink);">GitHub</a> · <a href="#" style="color: var(--inv-ink);">CV en PDF</a></div>
+        <div style="margin-top: 16px;">Español nativo · Inglés B1 intermedio, certificado EF SET, lectura técnica B2.</div>
+        <div style="margin-top: 12px;">Torreón, Coahuila, México · GMT-6 · remoto o híbrido.</div>
+      </div>
+    </div>
+    <div class="meta" style="display: flex; justify-content: space-between; gap: 24px; padding-top: 24px; font-size: 12px; color: var(--inv-soft);">
+      <span>© 2026 Jose Gerardo Martínez Morán</span>
+      <span>Sitio estático en GitHub Pages · sin analítica ni cookies</span>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{"theme":{"editor":"enum","options":["claro","oscuro"],"default":"claro","section":"Tema"},"$preview":{"width":1440,"height":4800}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const initial = this.props.theme === 'oscuro' ? 'dark' : 'light';
+    const mode = (this.state && this.state.mode) ? this.state.mode : initial;
+    return {
+      themeClass: mode === 'dark' ? 't-dark' : 't-light',
+      themeLabel: mode === 'dark' ? 'Claro' : 'Oscuro',
+      toggleTheme: () => this.setState({ mode: mode === 'dark' ? 'light' : 'dark' })
+    };
+  }
+}
+</script>
+</body>
+</html>

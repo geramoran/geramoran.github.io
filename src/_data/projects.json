@@ -1,0 +1,322 @@
+[
+  {
+    "slug": "costopreciso",
+    "title": "CostoPreciso / CosteoMX",
+    "org": { "es": "Proyecto propio", "en": "Personal project" },
+    "period": { "es": "2026 — en curso", "en": "2026 — ongoing" },
+    "role": { "es": "Desarrollador único", "en": "Sole developer" },
+    "status": { "es": "En curso", "en": "Ongoing" },
+    "liveUrl": null,
+    "repoUrl": null,
+    "externalLinks": false,
+    "noLinksNote": {
+      "es": "Proyecto privado: sin repositorio público, sin demo y sin capturas. Lo describo aquí; no lo muestro.",
+      "en": "Private project: no public repository, no demo, no screenshots. Described here, not shown."
+    },
+    "summary": {
+      "es": "Plataforma SaaS multi-tenant de costeo para PYMEs mexicanas de cualquier giro. Dieciséis features pasaron por spec → plan → tasks antes de existir: casi 15,000 líneas de especificación bajo una constitución con principios no negociables. El motor de costeo es TypeScript puro con 346 tests en verde, separado por completo de la infraestructura.",
+      "en": "Multi-tenant SaaS costing platform for Mexican small and mid-sized businesses in any industry. Sixteen features went through spec → plan → tasks before any code existed: close to 15,000 lines of specification under a project constitution with non-negotiable principles. The costing engine is pure TypeScript with 346 passing tests, fully separated from infrastructure."
+    },
+    "stack": ["TypeScript", "NestJS", "Drizzle", "PostgreSQL", "React 18", "Vite", "Tailwind", "shadcn/ui", "Docker", "Ubuntu 24.04"],
+    "caseStudy": {
+      "problem": {
+        "es": "Una PYME que no sabe cuánto le cuesta producir vende a ciegas. Las hojas de cálculo que usan se rompen al crecer: cada giro inventa su propio vocabulario, nadie puede rastrear de dónde salió un número, y los datos de varias empresas terminan mezclados en el mismo archivo. Quise resolverlo con un producto donde cada fórmula fuera auditable y el aislamiento entre empresas existiera desde el primer commit, no como parche posterior.",
+        "en": "A small business that does not know its production cost is selling blind. The spreadsheets they use break as they grow: every industry invents its own vocabulary, nobody can trace where a number came from, and data from several companies ends up mixed in one file. I set out to solve it with a product where every formula is auditable and tenant isolation exists from the first commit, not as a later patch."
+      },
+      "decisions": [
+        {
+          "title": { "es": "Una constitución antes que la primera línea de código", "en": "A constitution before the first line of code" },
+          "body": {
+            "es": "El proyecto arranca con principios NO NEGOCIABLES escritos: motor puro que no importa infraestructura, fórmulas deterministas y auditables trazables a su sección numerada, vocabulario agnóstico al giro, multi-tenant desde el día cero. Cada una de las 16 features pasó por spec, plan y tasks antes de implementarse. Son casi 15,000 líneas de especificación, y su función real es que ninguna decisión de negocio viva solo en mi cabeza.",
+            "en": "The project starts with written NON-NEGOTIABLE principles: a pure engine that imports no infrastructure, deterministic and auditable formulas traceable to their numbered section, industry-agnostic vocabulary, multi-tenant from day zero. Each of the 16 features went through spec, plan and tasks before implementation. That is close to 15,000 lines of specification, and its real job is to keep business decisions out of my head alone."
+          }
+        },
+        {
+          "title": { "es": "El motor de costeo no sabe que existe una base de datos", "en": "The costing engine does not know a database exists" },
+          "body": {
+            "es": "Las fórmulas viven en funciones puras `(inputs) => resultado`, un archivo por sección de la especificación de fórmulas, sin acceso a red ni a disco. Eso permite 346 tests que corren en milisegundos y, sobre todo, que un cambio de fórmula se discuta contra su sección de la especificación en vez de contra un stack trace.",
+            "en": "Formulas live in pure `(inputs) => result` functions, one file per section of the formula specification, with no network or disk access. That buys 346 tests that run in milliseconds and, more importantly, lets a formula change be argued against its specification section instead of against a stack trace."
+          }
+        },
+        {
+          "title": { "es": "Aislamiento por tenant a nivel de fila", "en": "Row-level tenant isolation" },
+          "body": {
+            "es": "Cada consulta va acotada por tenant en la capa de datos, no en la de presentación. Autenticación con argon2 y JWT, más login con Google. La regla es simple: si una consulta puede escribirse sin tenant, está mal escrita.",
+            "en": "Every query is scoped by tenant at the data layer, not the presentation layer. Authentication with argon2 and JWT, plus Google sign-in. The rule is simple: if a query can be written without a tenant, it is written wrong."
+          }
+        },
+        {
+          "title": { "es": "Seis bugs que la suite en verde no detectó", "en": "Six bugs a fully green suite did not catch" },
+          "body": {
+            "es": "El despliegue real destapó seis fallos que ningún test veía, porque ningún test ejercitaba producción de verdad: el arranque de inyección de dependencias de Nest, el bundle cargado por etiqueta script, estado de sesión que no era estado de React. Los documenté uno por uno, incluida la reversión de un cambio de `manualChunks` que dejó la pantalla en blanco en producción. Prefiero que se lea esto a que se lea «100% de cobertura».",
+            "en": "The real deployment surfaced six failures no test could see, because no test exercised production for real: Nest's dependency-injection bootstrap, the bundle loaded through a script tag, session state that was not React state. I documented them one by one, including reverting a `manualChunks` change that left a blank screen in production. I would rather you read this than read \"100% coverage\"."
+          }
+        }
+      ],
+      "responsibility": {
+        "es": "Todo: especificación, arquitectura, backend NestJS con Drizzle y PostgreSQL, frontend React 18 con Vite, Tailwind y shadcn/ui, y el despliegue del 18 de julio de 2026 en un VPS Ubuntu 24.04 con Nginx, el backend bajo systemd y PostgreSQL en Docker. Construido con Claude Code a diario como método de trabajo, no como autocompletado.",
+        "en": "Everything: specification, architecture, a NestJS backend with Drizzle and PostgreSQL, a React 18 frontend with Vite, Tailwind and shadcn/ui, and the 18 July 2026 deployment on an Ubuntu 24.04 VPS with Nginx, the backend under systemd and PostgreSQL in Docker. Built with Claude Code daily as a working method, not as autocomplete."
+      },
+      "outcome": {
+        "es": "Desplegado y funcionando desde julio de 2026, con el motor determinista cubierto por 346 tests y la especificación como fuente de verdad de cada fórmula.",
+        "en": "Deployed and running since July 2026, with the deterministic engine covered by 346 tests and the specification acting as the source of truth for every formula."
+      },
+      "limits": {
+        "es": "Está desplegado, no lanzado: no hay usuarios, ni clientes, ni ingresos, y el dominio todavía no está registrado. El repositorio es privado, así que no hay enlace ni capturas. Es un proyecto en curso, no un producto terminado.",
+        "en": "It is deployed, not launched: no users, no customers, no revenue, and the domain is not registered yet. The repository is private, so there is no link and no screenshots. It is ongoing work, not a finished product."
+      }
+    }
+  },
+  {
+    "slug": "chat-orquestacion-ia",
+    "title": {
+      "es": "Chat interno con orquestación de IA",
+      "en": "Internal chat platform with AI orchestration"
+    },
+    "org": { "es": "MySourcing", "en": "MySourcing" },
+    "period": { "es": "2025 — 2026", "en": "2025 — 2026" },
+    "role": { "es": "Arquitectura y desarrollo", "en": "Architecture and development" },
+    "status": { "es": "Proyecto privado", "en": "Private project" },
+    "liveUrl": null,
+    "repoUrl": null,
+    "privateNote": {
+      "es": "Sistema propiedad del cliente: puedo contar la arquitectura y las decisiones, no publicar código ni capturas.",
+      "en": "Client-owned system: I can describe the architecture and the decisions, not publish code or screenshots."
+    },
+    "summary": {
+      "es": "Hub de API unificado que conecta varios productos internos y externos en entorno multitenant con aislamiento por empresa: tiempo real con Socket.io, archivos cifrados de extremo a extremo cruzando fronteras de tenant, rate limiting. Encima, una capa de orquestación que expone la suite de productos como herramientas invocables por un LLM.",
+      "en": "A unified API hub connecting several internal and external products in a multi-tenant environment with per-company isolation: real time over Socket.io, end-to-end encrypted file sharing across tenant boundaries, rate limiting. On top of it, an orchestration layer exposing the product suite as tools an LLM can invoke."
+    },
+    "stack": ["TypeScript", "React", "Node.js", "Express", "Socket.io", "Prisma", "PostgreSQL", "Tailwind", "Docker", "Claude API"],
+    "caseStudy": {
+      "problem": {
+        "es": "La empresa tenía varios productos internos que no se hablaban entre sí. Autorizar una compra, avisar a un equipo y consultar el estado de otro sistema eran tres aplicaciones distintas y una cadena de mensajes manuales. El costo real no era técnico: era el cambio de contexto de las personas.",
+        "en": "The company had several internal products that did not talk to each other. Approving a purchase, notifying a team and checking another system's status meant three separate applications and a chain of manual messages. The real cost was not technical: it was the context switching people had to do."
+      },
+      "decisions": [
+        {
+          "title": { "es": "El chat como hub de API, no como otra aplicación más", "en": "Chat as an API hub, not one more application" },
+          "body": {
+            "es": "En lugar de sumar un chat al catálogo, lo diseñé como el punto único donde los demás productos publican y consumen eventos. Cada producto se integra una vez contra el hub, no N veces contra los otros.",
+            "en": "Instead of adding a chat to the catalogue, I designed it as the single point where the other products publish and consume events. Each product integrates once against the hub instead of N times against the others."
+          }
+        },
+        {
+          "title": { "es": "Multitenant con aislamiento por empresa desde el diseño", "en": "Multi-tenant with per-company isolation by design" },
+          "body": {
+            "es": "Los datos de cada empresa quedan separados, y el caso especial —compartir archivos cruzando fronteras de tenant— se resolvió con cifrado extremo a extremo, de forma que el tránsito entre empresas sea una excepción explícita y no un descuido.",
+            "en": "Each company's data stays separated, and the special case — sharing files across tenant boundaries — was solved with end-to-end encryption, so cross-company transit is an explicit exception rather than an oversight."
+          }
+        },
+        {
+          "title": { "es": "La suite de productos, expuesta como herramientas para un LLM", "en": "The product suite exposed as tools for an LLM" },
+          "body": {
+            "es": "Construí la capa de orquestación que describe cada operación de los productos como una herramienta invocable, con sus permisos y su manejo de error. El modelo no ejecuta nada que no esté declarado, y cada invocación pasa por las mismas reglas de autorización que la UI.",
+            "en": "I built the orchestration layer that describes each product operation as an invocable tool, with its permissions and its error handling. The model runs nothing that is not declared, and every invocation goes through the same authorization rules as the UI."
+          }
+        },
+        {
+          "title": { "es": "Aprobaciones dentro del chat", "en": "Approvals inside the chat" },
+          "body": {
+            "es": "Integré los flujos de autorización de compras del Portal de Requisiciones directo en la UI del chat: el aprobador decide donde ya está conversando, sin abrir otro sistema.",
+            "en": "I brought the purchase-approval flows from the Requisitions Portal straight into the chat UI: approvers decide where they are already talking, without opening another system."
+          }
+        }
+      ],
+      "responsibility": {
+        "es": "Arquitectura del hub, comunicación bidireccional en tiempo real con Socket.io, compartición de archivos cifrada, rate limiting y throttling sobre las APIs, la capa de orquestación de IA y la integración de las aprobaciones de compra en la interfaz del chat.",
+        "en": "Hub architecture, bidirectional real-time communication over Socket.io, encrypted file sharing, rate limiting and throttling across the APIs, the AI orchestration layer, and bringing purchase approvals into the chat interface."
+      },
+      "outcome": {
+        "es": "Flujos que antes exigían coordinación manual entre sistemas quedaron automatizados, y las aprobaciones de compra dejaron de requerir cambio de aplicación.",
+        "en": "Flows that used to require manual coordination between systems became automated, and purchase approvals no longer require switching applications."
+      },
+      "limits": {
+        "es": "El sistema es propiedad de MySourcing. Puedo describir arquitectura, stack y mi responsabilidad; no publico código, capturas ni nombres de clientes finales. No tengo métricas de adopción que sean mías para compartir.",
+        "en": "The system is owned by MySourcing. I can describe architecture, stack and my responsibility; I do not publish code, screenshots or end-client names. I have no adoption metrics that are mine to share."
+      }
+    }
+  },
+  {
+    "slug": "portal-requisiciones",
+    "title": {
+      "es": "Portal de requisiciones de compra",
+      "en": "Purchase requisitions portal"
+    },
+    "org": { "es": "MySourcing", "en": "MySourcing" },
+    "period": { "es": "2025 — 2026", "en": "2025 — 2026" },
+    "role": { "es": "Diseño y desarrollo", "en": "Design and development" },
+    "status": { "es": "Proyecto privado", "en": "Private project" },
+    "liveUrl": null,
+    "repoUrl": null,
+    "privateNote": {
+      "es": "Sistema propiedad del cliente: puedo contar la arquitectura y las decisiones, no publicar código ni capturas.",
+      "en": "Client-owned system: I can describe the architecture and the decisions, not publish code or screenshots."
+    },
+    "summary": {
+      "es": "Ciclo completo de requisiciones de compra: creación, autorización multinivel, gestión de proveedores y seguimiento de pagos, con correo transaccional automático para órdenes de compra y avisos de estatus de entrega, y dashboards en tiempo real de gasto y aprobaciones pendientes.",
+      "en": "The full purchase-requisition cycle: creation, multi-level approval, supplier management and payment tracking, with automated transactional email for purchase orders and delivery-status notices, plus real-time dashboards of spend and pending approvals."
+    },
+    "stack": ["TypeScript", "React", "Node.js", "Express", "Prisma", "PostgreSQL", "Tailwind", "Docker"],
+    "caseStudy": {
+      "problem": {
+        "es": "Las compras se movían por correo y hojas de cálculo. Nadie sabía en qué nivel de autorización estaba una requisición, finanzas no veía el gasto comprometido hasta que llegaba la factura, y avisar a un proveedor dependía de que alguien se acordara.",
+        "en": "Purchasing ran on email and spreadsheets. Nobody knew which approval level a requisition was sitting at, finance could not see committed spend until the invoice arrived, and notifying a supplier depended on somebody remembering."
+      },
+      "decisions": [
+        {
+          "title": { "es": "La autorización como máquina de estados, no como bandeja de correo", "en": "Approval as a state machine, not an inbox" },
+          "body": {
+            "es": "Cada requisición avanza por niveles explícitos con su responsable y su registro. El estado vive en el sistema, no en el hilo de correo de alguien.",
+            "en": "Every requisition advances through explicit levels, each with its owner and its record. State lives in the system, not in somebody's email thread."
+          }
+        },
+        {
+          "title": { "es": "Comunicación con proveedores automatizada por evento", "en": "Supplier communication automated per event" },
+          "body": {
+            "es": "La generación de órdenes de compra y los avisos de estatus de entrega salen del propio flujo, como correo transaccional disparado por el cambio de estado. Menos recordatorios humanos, menos huecos.",
+            "en": "Purchase-order generation and delivery-status notices come out of the flow itself, as transactional email triggered by the state change. Fewer human reminders, fewer gaps."
+          }
+        },
+        {
+          "title": { "es": "Dashboards para quien decide, no para quien captura", "en": "Dashboards for the people who decide" },
+          "body": {
+            "es": "Finanzas y operaciones ven gasto y aprobaciones pendientes en tiempo real. El objetivo del tablero no era lucir datos: era acortar el tiempo entre que algo se atora y que alguien se entera.",
+            "en": "Finance and operations see spend and pending approvals in real time. The dashboard's goal was not to display data: it was to shorten the time between something getting stuck and somebody noticing."
+          }
+        }
+      ],
+      "responsibility": {
+        "es": "Diseño y construcción del ciclo completo, la automatización de correo transaccional con proveedores y los dashboards de gasto y aprobaciones.",
+        "en": "Designing and building the full cycle, the transactional email automation with suppliers, and the spend and approval dashboards."
+      },
+      "outcome": {
+        "es": "El estado de cada compra dejó de vivir en hilos de correo y pasó a ser consultable, con avisos a proveedor disparados por el propio flujo.",
+        "en": "Purchase status stopped living in email threads and became queryable, with supplier notices triggered by the flow itself."
+      },
+      "limits": {
+        "es": "El sistema es propiedad de MySourcing. Puedo describir arquitectura, stack y mi responsabilidad; no publico código, capturas ni nombres de proveedores o clientes finales.",
+        "en": "The system is owned by MySourcing. I can describe architecture, stack and my responsibility; I do not publish code, screenshots, supplier names or end-client names."
+      }
+    }
+  },
+  {
+    "slug": "almacen-entregas",
+    "title": {
+      "es": "Almacén y entregas con webhooks de campo",
+      "en": "Warehouse and delivery platform with field webhooks"
+    },
+    "org": { "es": "Freelance · proyecto ATT / ProntoForms", "en": "Freelance · ATT / ProntoForms project" },
+    "period": { "es": "2020 — 2021", "en": "2020 — 2021" },
+    "role": { "es": "Desarrollador único", "en": "Sole developer" },
+    "status": null,
+    "liveUrl": null,
+    "repoUrl": null,
+    "summary": {
+      "es": "Plataforma completa de gestión de almacén y entregas: inventario con conteos ciegos y reporte automático de discrepancias, logística con manifiestos en PDF y trazabilidad por unidad, y webhooks de ProntoForms procesando coordenadas GPS y fotos de campo en tiempo real.",
+      "en": "A complete warehouse and delivery management platform: inventory with blind counts and automatic discrepancy reports, logistics with PDF delivery manifests and per-unit traceability, and ProntoForms webhooks processing GPS coordinates and field photos in real time."
+    },
+    "stack": ["PHP 8", "Laravel 8", "Vue.js", "MySQL", "Redis", "Docker", "AWS S3"],
+    "metrics": [
+      { "value": "50–200", "label": { "es": "paquetes diarios", "en": "packages per day" } },
+      { "value": "12", "label": { "es": "repartidores activos", "en": "active drivers" } }
+    ],
+    "caseStudy": {
+      "problem": {
+        "es": "Un almacén con entregas diarias necesitaba saber dos cosas al mismo tiempo: qué hay realmente en cada rack y dónde está cada paquete que salió. Lo primero se contaba a mano y las diferencias aparecían tarde; lo segundo dependía de llamadas a los repartidores.",
+        "en": "A warehouse with daily deliveries needed to know two things at once: what is actually on each rack, and where every package that left is right now. The first was counted by hand and discrepancies showed up late; the second depended on calling the drivers."
+      },
+      "decisions": [
+        {
+          "title": { "es": "Conteos ciegos con reporte automático de discrepancias", "en": "Blind counts with automatic discrepancy reports" },
+          "body": {
+            "es": "Quien cuenta no ve la cantidad esperada. El sistema compara y reporta la diferencia por zona y rack, así el conteo mide la realidad en vez de confirmar el papel.",
+            "en": "Whoever counts does not see the expected quantity. The system compares and reports the difference by zone and rack, so the count measures reality instead of confirming the paperwork."
+          }
+        },
+        {
+          "title": { "es": "Trazabilidad por unidad, no por envío", "en": "Traceability per unit, not per shipment" },
+          "body": {
+            "es": "Catálogo de estatus y bitácora por unidad: cada paquete acumula su propia historia. Un manifiesto en PDF (DomPDF) acompaña la entrega física, pero la verdad vive en la bitácora.",
+            "en": "A status catalogue and a per-unit log: each package accumulates its own history. A PDF manifest (DomPDF) travels with the physical delivery, but the truth lives in the log."
+          }
+        },
+        {
+          "title": { "es": "El campo escribe en el sistema, no al revés", "en": "The field writes into the system, not the other way round" },
+          "body": {
+            "es": "Los webhooks de ProntoForms procesan en tiempo real coordenadas GPS, fotos y motivos de rechazo desde los formularios móviles, y los vuelcan en la bitácora automáticamente. El repartidor no captura dos veces.",
+            "en": "ProntoForms webhooks process GPS coordinates, photos and rejection reasons from the mobile forms in real time and write them into the log automatically. The driver never enters the same thing twice."
+          }
+        },
+        {
+          "title": { "es": "Reportes que salen solos", "en": "Reports that send themselves" },
+          "body": {
+            "es": "Reportes automáticos en Excel y PDF vía cron jobs y Laravel Queue, con envío programado, más control de acceso por roles y una UI con modo oscuro para el turno de noche.",
+            "en": "Automated Excel and PDF reports through cron jobs and Laravel Queue, on a schedule, plus role-based access control and a dark-mode UI for the night shift."
+          }
+        }
+      ],
+      "responsibility": {
+        "es": "Desarrollador único: arquitectura, construcción y despliegue a producción, de los módulos de inventario y logística a la integración de webhooks y los reportes programados.",
+        "en": "Sole developer: architecture, build and deployment to production, from the inventory and logistics modules to the webhook integration and the scheduled reports."
+      },
+      "outcome": {
+        "es": "Escala real en producción: entre 50 y 200 paquetes diarios, con 12 repartidores activos usando la plataforma todos los días.",
+        "en": "Real production scale: between 50 and 200 packages a day, with 12 active drivers using the platform every day."
+      },
+      "limits": {
+        "es": "Proyecto de cliente, entregado en 2021. No conservo acceso ni capturas publicables.",
+        "en": "Client project, delivered in 2021. I keep no access to it and no publishable screenshots."
+      }
+    }
+  },
+  {
+    "slug": "elvira-richards",
+    "title": "Elvira Richards",
+    "org": { "es": "Independiente", "en": "Independent" },
+    "period": { "es": "2018", "en": "2018" },
+    "role": { "es": "Desarrollo y mantenimiento", "en": "Development and maintenance" },
+    "status": null,
+    "liveUrl": "https://www.elvirarichards.com.mx",
+    "repoUrl": null,
+    "summary": {
+      "es": "Página de talento para la promotora Elvira Richards: tema PHP a la medida sobre WordPress, con módulos propios, plugins de terceros y mantenimiento del servidor. Corrió en paralelo a mi puesto en Asta Software y sigue en línea.",
+      "en": "Talent website for the promoter Elvira Richards: a custom PHP theme on WordPress, with in-house modules, third-party plugins and server maintenance. It ran alongside my job at Asta Software and is still online."
+    },
+    "stack": ["WordPress", "PHP", "MySQL", "HTML/CSS", "Administración de servidor"],
+    "caseStudy": {
+      "problem": {
+        "es": "La promotora necesitaba una página propia para presentar talento, actualizable por ella sin depender de un desarrollador para cada cambio.",
+        "en": "The promoter needed her own site to present talent, updatable by her without depending on a developer for every change."
+      },
+      "decisions": [
+        {
+          "title": { "es": "WordPress como panel, tema propio como producto", "en": "WordPress as the panel, a custom theme as the product" },
+          "body": {
+            "es": "En vez de forzar una plantilla comercial, escribí el tema en PHP a la medida del contenido real, y dejé la edición en el panel que la clienta ya sabía usar.",
+            "en": "Rather than bending a commercial template, I wrote the theme in PHP around the real content, and left editing in the panel the client already knew how to use."
+          }
+        },
+        {
+          "title": { "es": "Módulos propios donde el plugin no alcanzaba", "en": "In-house modules where a plugin fell short" },
+          "body": {
+            "es": "Plugins de terceros para lo estándar; código propio para lo específico del negocio. Menos superficie que mantener y menos sorpresas en actualizaciones.",
+            "en": "Third-party plugins for the standard parts; custom code for what is specific to the business. Less surface to maintain and fewer surprises at update time."
+          }
+        }
+      ],
+      "responsibility": {
+        "es": "Desarrollo del tema y los módulos, integración de plugins y mantenimiento del servidor.",
+        "en": "Theme and module development, plugin integration and server maintenance."
+      },
+      "outcome": {
+        "es": "Sitio en producción desde 2018 y todavía en línea.",
+        "en": "In production since 2018 and still online."
+      },
+      "limits": {
+        "es": "Trabajo de 2018 y mantenimiento terminado. El sitio pudo cambiar desde entonces sin intervención mía.",
+        "en": "2018 work, maintenance since ended. The site may have changed since without my involvement."
+      }
+    }
+  }
+]
