@@ -30,7 +30,8 @@ npm run build   # genera _site/ (lo que se publica)
 ├── .github/workflows/deploy.yml   Despliegue automático a GitHub Pages
 ├── eleventy.config.cjs            Configuración: rutas, filtros, pathPrefix
 ├── cv/
-│   └── gerardo-martinez-cv.pdf    ← PON AQUÍ TU CV con ese nombre exacto
+│   ├── gerardo-martinez-cv.pdf       CV en español, lo sirve la versión /
+│   └── gerardo-martinez-cv-en.pdf    CV en inglés, lo sirve la versión /en/
 └── src/
     ├── _data/                     ► TODO EL CONTENIDO ESTÁ AQUÍ
     │   ├── site.json              Nombre, correo, redes, ubicación, URL del sitio
@@ -154,8 +155,18 @@ automático se verán distintos.
 
 ### 7. Actualizar el CV
 
-Reemplaza `cv/gerardo-martinez-cv.pdf` conservando el nombre. Los enlaces de la barra, el hero y el
-pie apuntan a esa ruta fija: así los enlaces que ya compartiste siguen funcionando.
+Hay **dos PDF, uno por idioma**, y cada versión del sitio sirve el suyo:
+
+| Versión | Archivo | De dónde sale |
+|---------|---------|---------------|
+| `/` (español) | `cv/gerardo-martinez-cv.pdf` | `cv/main_portfolio_es.tex` del repo `ai-job-search` |
+| `/en/` (inglés) | `cv/gerardo-martinez-cv-en.pdf` | `cv/main_portfolio_en.tex` del mismo repo |
+
+Reemplázalos **conservando los nombres**: los enlaces de la barra, el hero y el pie apuntan a esas
+rutas fijas, así los enlaces que ya compartiste siguen funcionando. Las rutas viven en un solo lugar,
+`site.json` → `cv.es` / `cv.en`, y las plantillas eligen según el idioma de la página con el filtro
+`t`. Para regenerar los PDF, compila los `.tex` con `lualatex` (dos pasadas, la segunda arregla el
+contador «página 1/2») y copia los resultados aquí.
 
 ---
 
@@ -219,7 +230,7 @@ No está implementado y no hace falta para nada de lo actual. Queda anotado para
 
 ## Pendientes conocidos
 
-- [ ] **Poner el PDF del CV** en `cv/gerardo-martinez-cv.pdf` (hoy sólo hay un aviso).
+- [x] **PDF del CV**: ya están los dos, español e inglés, en `cv/` (ver «Actualizar el CV»).
 - [ ] **Imagen de Open Graph.** Falta `src/assets/og.png` de 1200×630 para que el enlace se vea bien
       en LinkedIn. Cuando exista, pon `"ogImage": "/assets/og.png"` en `src/_data/site.json`; las
       etiquetas ya están condicionadas y aparecerán solas.

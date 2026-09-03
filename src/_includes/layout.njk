@@ -105,7 +105,7 @@
           <span class="visually-hidden" data-theme-to-dark>{{ t.labels.themeToDark }}</span>
           <span class="visually-hidden" data-theme-to-light>{{ t.labels.themeToLight }}</span>
         </button>
-        <a class="btn btn--outline" href="{{ site.cv | url }}" download>CV.pdf</a>
+        <a class="btn btn--outline" href="{{ site.cv | t(lang) | url }}" download>CV.pdf</a>
       </div>
     </div>
   </div>
@@ -137,7 +137,7 @@
         <ul>
           <li><a href="{{ site.linkedin }}" rel="me noopener">LinkedIn</a></li>
           <li><a href="{{ site.github }}" rel="me noopener">GitHub</a></li>
-          <li><a href="{{ site.cv | url }}" download>CV.pdf</a></li>
+          <li><a href="{{ site.cv | t(lang) | url }}" download>CV.pdf</a></li>
         </ul>
       </div>
       <div class="mono footer__col footer__col--muted">

@@ -8,7 +8,7 @@
       <p class="hero__lede">{{ t.hero.lede }}</p>
       <div class="hero__actions">
         <a class="btn btn--solid mono" href="#proyectos">{{ t.hero.ctaProjects }}</a>
-        <a class="btn btn--outline mono" href="{{ site.cv | url }}" download>{{ t.hero.ctaCv }}</a>
+        <a class="btn btn--outline mono" href="{{ site.cv | t(lang) | url }}" download>{{ t.hero.ctaCv }}</a>
         <a class="hero__link mono" href="{{ site.linkedin }}" rel="me noopener">LinkedIn</a>
         <a class="hero__link mono" href="{{ site.github }}" rel="me noopener">GitHub</a>
         <a class="hero__link mono" href="mailto:{{ site.email }}">{{ site.email }}</a>

@@ -19,7 +19,10 @@
   "email": "geramtz100@gmail.com",
   "linkedin": "https://www.linkedin.com/in/geramoran/",
   "github": "https://github.com/geramoran",
-  "cv": "/cv/gerardo-martinez-cv.pdf",
+  "cv": {
+    "es": "/cv/gerardo-martinez-cv.pdf",
+    "en": "/cv/gerardo-martinez-cv-en.pdf"
+  },
   "licenseNumber": "12320388",
   "url": "https://geramoran.github.io",
   "ogImage": null,
