@@ -29,14 +29,14 @@
   {
     "id": "single-project",
     "label": {
-      "es": "Un proyecto completo, no años de uso",
-      "en": "One complete project, not years of use"
+      "es": "Proyecto completo",
+      "en": "A complete project"
     },
     "emphasis": "accent",
     "items": ["n8n"],
     "note": {
-      "es": "Un agente conversacional construido y documentado de extremo a extremo (prueba técnica de CuatroD Studios, junio de 2026). No está al nivel de PHP o TypeScript y no lo presento así.",
-      "en": "One conversational agent built and documented end to end (CuatroD Studios technical test, June 2026). It is not on the level of PHP or TypeScript and I do not present it that way."
+      "es": "Un agente conversacional construido y documentado de extremo a extremo usado para prueba técnica.",
+      "en": "One conversational agent built and documented end to end used for technical testing."
     }
   },
   {
