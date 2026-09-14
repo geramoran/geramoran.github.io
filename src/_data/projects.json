@@ -212,8 +212,8 @@
     "liveUrl": "https://www.elvirarichards.com.mx",
     "repoUrl": null,
     "summary": {
-      "es": "Página de talento para la promotora Elvira Richards: tema PHP a la medida sobre WordPress, con módulos propios, plugins de terceros y mantenimiento del servidor. Corrió en paralelo a mi puesto en Asta Software y sigue en línea.",
-      "en": "Talent website for the promoter Elvira Richards: a custom PHP theme on WordPress, with in-house modules, third-party plugins and server maintenance. It ran alongside my job at Asta Software and is still online."
+      "es": "Página de talento para la promotora Elvira Richards: tema PHP a la medida sobre WordPress, con módulos propios, plugins de terceros y mantenimiento del servidor. Sigue en línea.",
+      "en": "Talent website for the promoter Elvira Richards: a custom PHP theme on WordPress, with in-house modules, third-party plugins and server maintenance. Continues online."
     },
     "stack": ["WordPress", "PHP", "MySQL", "HTML/CSS", "Administración de servidor"],
     "caseStudy": {
