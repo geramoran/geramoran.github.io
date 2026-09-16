@@ -135,14 +135,14 @@
   {
     "slug": "almacen-entregas",
     "title": {
-      "es": "Almacén y entregas con webhooks de campo",
-      "en": "Warehouse and delivery platform with field webhooks"
+      "es": "Almacén y entregas con webhooks de campo (Rutero)",
+      "en": "Warehouse and delivery platform with field webhooks (Rutero)"
     },
     "org": { "es": "Freelance · proyecto ATT / ProntoForms", "en": "Freelance · ATT / ProntoForms project" },
     "period": { "es": "2020 — 2021", "en": "2020 — 2021" },
     "role": { "es": "Desarrollador único", "en": "Sole developer" },
     "status": null,
-    "liveUrl": null,
+    "liveUrl": "http://129.121.76.85/proyectos/rutero/",
     "repoUrl": null,
     "summary": {
       "es": "Plataforma completa de gestión de almacén y entregas: inventario con conteos ciegos y reporte automático de discrepancias, logística con manifiestos en PDF y trazabilidad por unidad, y webhooks de ProntoForms procesando coordenadas GPS y fotos de campo en tiempo real.",
@@ -197,8 +197,8 @@
         "en": "Real production scale: between 50 and 200 packages a day, with 12 active drivers using the platform every day."
       },
       "limits": {
-        "es": "Proyecto de cliente, entregado en 2021. No conservo acceso ni capturas publicables.",
-        "en": "Client project, delivered in 2021. I keep no access to it and no publishable screenshots."
+        "es": "Proyecto de cliente, entregado en 2021. La versión en línea es una demo montada por mí para este portafolio, no la instancia real de producción del cliente.",
+        "en": "Client project, delivered in 2021. The live version is a demo I set up for this portfolio, not the client's real production instance."
       }
     }
   },
