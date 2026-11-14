@@ -32,9 +32,16 @@
       </div>
     </header>
 
+    {% if item.image %}
+    <figure class="shot shot--wide">
+      <img src="{{ item.image.src | url }}" width="{{ item.image.width }}" height="{{ item.image.height }}" alt="{{ item.image.alt | t(lang) }}">
+      <figcaption>{{ item.image.caption | t(lang) }}</figcaption>
+    </figure>
+    {% endif %}
+
     <section class="case__block">
       <h2 class="case__blockTitle mono">{{ t.labels.problem }}</h2>
-      <p>{{ cs.problem | t(lang) }}</p>
+      <p>{{ cs.problem | t(lang) | rich | safe }}</p>
     </section>
 
     {% if cs.decisions.length %}
@@ -44,7 +51,7 @@
         {% for d in cs.decisions %}
         <li class="decision">
           <h3 class="decision__title">{{ d.title | t(lang) }}</h3>
-          <p>{{ d.body | t(lang) }}</p>
+          <p>{{ d.body | t(lang) | rich | safe }}</p>
         </li>
         {% endfor %}
       </ol>
@@ -53,12 +60,12 @@
 
     <section class="case__block">
       <h2 class="case__blockTitle mono">{{ t.labels.responsibility }}</h2>
-      <p>{{ cs.responsibility | t(lang) }}</p>
+      <p>{{ cs.responsibility | t(lang) | rich | safe }}</p>
     </section>
 
     <section class="case__block">
       <h2 class="case__blockTitle mono">{{ t.labels.outcome }}</h2>
-      <p>{{ cs.outcome | t(lang) }}</p>
+      <p>{{ cs.outcome | t(lang) | rich | safe }}</p>
       {% if item.metrics %}
       <dl class="metrics metrics--wide">
         {% for m in item.metrics %}
@@ -73,12 +80,19 @@
 
     <section class="case__block case__block--limits">
       <h2 class="case__blockTitle mono">{{ t.labels.honesty }}</h2>
-      <p>{{ cs.limits | t(lang) }}</p>
+      <p>{{ cs.limits | t(lang) | rich | safe }}</p>
     </section>
 
-    <p class="case__back mono">
+    {%- set nextItem = projects | nextProject(item.slug) %}
+    <nav class="case__nav mono" aria-label="{{ t.nav.projects }}">
       <a href="{{ lang | homeUrl | url }}#proyectos">← {{ t.labels.backToProjects }}</a>
-    </p>
+      {% if nextItem %}
+      <a class="case__next" href="{{ nextItem.slug | projectUrl(lang) | url }}">
+        <span class="case__nextLabel">{{ t.labels.nextProject }} →</span>
+        <span class="case__nextTitle">{{ nextItem.title | t(lang) }}</span>
+      </a>
+      {% endif %}
+    </nav>
 
   </div>
 </article>

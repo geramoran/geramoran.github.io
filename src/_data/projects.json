@@ -1,5 +1,92 @@
 [
   {
+    "slug": "costopreciso",
+    "title": "CostoPreciso",
+    "org": { "es": "Proyecto freelance para cliente", "en": "Freelance client project" },
+    "period": { "es": "Jun 2026 — en curso", "en": "Jun 2026 — ongoing" },
+    "role": { "es": "Desarrollador único", "en": "Sole developer" },
+    "status": { "es": "En desarrollo", "en": "In development" },
+    "liveUrl": "https://costopreciso.com/",
+    "repoUrl": null,
+    "image": {
+      "src": "/assets/shots/costopreciso.jpg",
+      "width": 1440,
+      "height": 900,
+      "alt": {
+        "es": "Portada del sitio público de CostoPreciso, con el formulario de inicio de sesión a la derecha.",
+        "en": "Home page of the CostoPreciso public site, with the sign-in form on the right."
+      },
+      "caption": {
+        "es": "Sitio público, costopreciso.com. Captura de noviembre de 2026; las cifras del tablero son ilustrativas.",
+        "en": "Public site, costopreciso.com. Captured in November 2026; the dashboard figures are illustrative."
+      }
+    },
+    "privateNote": {
+      "es": "El enlace abre el sitio público del producto. La aplicación requiere cuenta y el repositorio es privado del cliente.",
+      "en": "The link opens the product's public site. The application requires an account and the repository is private to the client."
+    },
+    "summary": {
+      "es": "Plataforma SaaS multi-tenant de costeo y cotización para PYMEs manufactureras mexicanas, empezando por metalmecánica. Veintisiete features pasaron por spec → plan → tasks con Spec-kit antes de existir. Un motor de costeo determinista en TypeScript puro calcula el costo por proceso, el reparto de logística y el precio sugerido, y lo comparten el backend y el frontend.",
+      "en": "Multi-tenant costing and quoting SaaS for Mexican manufacturing SMEs, starting with metalworking. Twenty-seven features went through spec → plan → tasks with Spec-kit before they existed. A deterministic pure-TypeScript costing engine computes cost per process, logistics allocation and suggested price, and both the backend and the frontend share it."
+    },
+    "stack": ["TypeScript", "NestJS", "Drizzle", "PostgreSQL 16", "React 18", "Vite", "Tailwind", "shadcn/ui", "Docker", "Nginx", "GitHub Actions"],
+    "caseStudy": {
+      "problem": {
+        "es": "Una PYME que no sabe cuánto le cuesta producir vende a ciegas. En un taller metalmecánico el costo real depende de la ruta de procesos de cada producto: material, mano de obra, máquina, seteo, indirectos, empaque y la logística de entrada y salida. Las hojas de cálculo no aguantan eso: nadie puede rastrear de dónde salió un número y los datos de varias empresas terminan mezclados. Lo resolví con un sistema donde cada fórmula es auditable y el aislamiento entre empresas existe desde el primer commit.",
+        "en": "A small business that does not know its production cost is selling blind. In a metalworking shop the real cost depends on each product's process route: material, labour, machine, setup, overhead, packaging, and inbound and outbound logistics. Spreadsheets do not survive that: nobody can trace where a number came from, and data from several companies ends up mixed together. I built a system where every formula is auditable and tenant isolation exists from the first commit."
+      },
+      "decisions": [
+        {
+          "title": { "es": "Una constitución antes que la primera línea de código", "en": "A constitution before the first line of code" },
+          "body": {
+            "es": "El proyecto arranca con principios NO NEGOCIABLES escritos: motor puro que no importa infraestructura, fórmulas deterministas trazables a su sección numerada, vocabulario agnóstico al giro en el motor y multi-tenant desde el día cero. Cada una de las 27 features pasó por spec, plan y tasks con Spec-kit y Claude Code antes de implementarse, y cada una se cierra contra pruebas automatizadas unitarias y end-to-end.",
+            "en": "The project starts with written NON-NEGOTIABLE principles: a pure engine that imports no infrastructure, deterministic formulas traceable to their numbered section, industry-agnostic vocabulary in the engine, and multi-tenant from day zero. Each of the 27 features went through spec, plan and tasks with Spec-kit and Claude Code before implementation, and each one is closed against automated unit and end-to-end tests."
+          }
+        },
+        {
+          "title": { "es": "El motor de costeo no sabe que existe una base de datos", "en": "The costing engine does not know a database exists" },
+          "body": {
+            "es": "Las fórmulas viven en funciones puras `(inputs) => resultado`, un archivo por sección de la especificación, sin acceso a red ni a disco. El mismo motor corre en el servidor y en el navegador, y los dos lados recorren los mismos vectores de prueba, así que el número que ve la persona al capturar es el mismo que guarda el servidor. Un cambio de fórmula se discute contra su sección de la especificación, no contra un stack trace.",
+            "en": "Formulas live in pure `(inputs) => result` functions, one file per specification section, with no network or disk access. The same engine runs on the server and in the browser, and both sides run the same test vectors, so the number a user sees while typing is the number the server stores. A formula change is argued against its specification section, not against a stack trace."
+          }
+        },
+        {
+          "title": { "es": "Aislamiento por tenant y sesión segura", "en": "Tenant isolation and secure sessions" },
+          "body": {
+            "es": "Cada consulta va acotada por tenant con seguridad a nivel de fila en PostgreSQL, no en la capa de presentación. La sesión usa un JWT de corta vida en memoria y una cookie HttpOnly de renovación que rota en cada uso y detecta reutilización; además hay bloqueo de cuenta tras intentos fallidos, una política de fortaleza de contraseñas y login con Google.",
+            "en": "Every query is scoped by tenant with PostgreSQL row-level security, not at the presentation layer. Sessions use a short-lived in-memory JWT plus an HttpOnly refresh cookie that rotates on every use and detects reuse, along with account lockout after failed attempts, a password-strength policy and Google sign-in."
+          }
+        },
+        {
+          "title": { "es": "Iterar con el experto del cliente, no adivinar", "en": "Iterating with the client's expert, not guessing" },
+          "body": {
+            "es": "Las pantallas de costeo por proceso, el reparto automático de logística y la cotización guiada por producto salieron de recorridos con el experto en costos del cliente y de sus bocetos. Cada cambio pedido en una junta se convirtió en una spec nueva antes de tocar código, incluido cambiar el vocabulario de toda la interfaz al lenguaje de metalmecánica sin tocar el motor.",
+            "en": "The per-process costing screens, automatic logistics allocation and the product-guided quote flow came out of walkthroughs with the client's costing expert and their sketches. Every change requested in a meeting became a new spec before any code changed, including switching the whole interface to metalworking vocabulary without touching the engine."
+          }
+        },
+        {
+          "title": { "es": "Seis bugs que la suite en verde no detectó", "en": "Six bugs a fully green suite did not catch" },
+          "body": {
+            "es": "El primer despliegue real destapó seis fallos que ningún test veía, porque ningún test ejercitaba producción de verdad: el arranque de inyección de dependencias de Nest, el bundle cargado por etiqueta script, estado de sesión que no era estado de React. Los documenté uno por uno, incluida la reversión de un cambio de `manualChunks` que dejó la pantalla en blanco en producción.",
+            "en": "The first real deployment surfaced six failures no test could see, because no test exercised production for real: Nest's dependency-injection bootstrap, the bundle loaded through a script tag, session state that was not React state. I documented them one by one, including reverting a `manualChunks` change that left a blank screen in production."
+          }
+        }
+      ],
+      "responsibility": {
+        "es": "Todo: especificación, arquitectura, backend NestJS con Drizzle y PostgreSQL 16, frontend React 18 con Vite, Tailwind y shadcn/ui, y la operación en un VPS Ubuntu con Nginx, el backend bajo systemd, PostgreSQL en Docker y despliegue continuo desde GitHub Actions. Construido con Claude Code a diario como método de trabajo, no como autocompletado.",
+        "en": "Everything: specification, architecture, a NestJS backend with Drizzle and PostgreSQL 16, a React 18 frontend with Vite, Tailwind and shadcn/ui, and operations on an Ubuntu VPS with Nginx, the backend under systemd, PostgreSQL in Docker and continuous deployment from GitHub Actions. Built with Claude Code daily as a working method, not as autocomplete."
+      },
+      "outcome": {
+        "es": "Desplegado en su propio dominio, costopreciso.com, desde septiembre de 2026, con el cliente revisando cada iteración. La especificación sigue siendo la fuente de verdad de cada fórmula.",
+        "en": "Deployed on its own domain, costopreciso.com, since September 2026, with the client reviewing each iteration. The specification remains the source of truth for every formula."
+      },
+      "limits": {
+        "es": "Está en desarrollo activo; todavía no es un producto terminado. El enlace lleva al sitio público; la aplicación pide una cuenta que no puedo compartir. El repositorio es privado y el producto es del cliente.",
+        "en": "It is in active development and not a finished product yet. The link goes to the public site; the application asks for an account I cannot share. The repository is private and the product belongs to the client."
+      }
+    }
+  },
+  {
     "slug": "chat-orquestacion-ia",
     "title": {
       "es": "Chat interno con orquestación de IA",
@@ -211,6 +298,19 @@
     "status": null,
     "liveUrl": "https://www.elvirarichards.com.mx",
     "repoUrl": null,
+    "image": {
+      "src": "/assets/shots/elvira-richards.jpg",
+      "width": 1440,
+      "height": 900,
+      "alt": {
+        "es": "Portada del sitio de Elvira Richards, con el menú de secciones y un carrusel de fotografías.",
+        "en": "Home page of the Elvira Richards site, with its section menu and a photo carousel."
+      },
+      "caption": {
+        "es": "Portada de elvirarichards.com.mx. Captura de noviembre de 2026.",
+        "en": "Home page of elvirarichards.com.mx. Captured in November 2026."
+      }
+    },
     "summary": {
       "es": "Página de talento para la promotora Elvira Richards: tema PHP a la medida sobre WordPress, con módulos propios, plugins de terceros y mantenimiento del servidor. Sigue en línea.",
       "en": "Talent website for the promoter Elvira Richards: a custom PHP theme on WordPress, with in-house modules, third-party plugins and server maintenance. Continues online."

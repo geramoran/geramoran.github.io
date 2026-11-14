@@ -80,9 +80,9 @@ Aparece solo el botón **«Ver en vivo»** en la portada y en el caso de estudio
 `null`, no aparece nada: la ficha se ve completa, no mutilada. Lo mismo con `"repoUrl"` para el botón
 de repositorio.
 
-> **CostoPreciso es la excepción deliberada.** Tiene `"externalLinks": false` y un `noLinksNote`.
-> Eso reemplaza los botones por una nota que dice que el proyecto es privado. Cuando decidas
-> mostrarlo, borra la línea `"externalLinks": false`, borra `noLinksNote` y pon la URL en `liveUrl`.
+> **CostoPreciso ya enlaza a su sitio público** (`https://costopreciso.com/`). Su `privateNote`
+> aclara que la aplicación pide cuenta y que el repositorio es privado del cliente. El cliente no se
+> nombra y el repositorio no se enlaza.
 
 ### 2. Agregar un proyecto nuevo
 
@@ -124,6 +124,9 @@ Campos opcionales que puedes agregar:
 | `"metrics"` | Cifras destacadas: `[{ "value": "50–200", "label": { "es": "paquetes diarios", "en": "packages per day" } }]`. |
 | `"ndaNote"` | Nota de que el sistema es del cliente y no hay código ni capturas. |
 | `"externalLinks": false` + `"noLinksNote"` | Quita todos los botones externos y explica por qué. |
+| `"image"` | Captura del proyecto, en la portada y en el caso de estudio: `{ "src": "/assets/shots/<slug>.jpg", "width": 1440, "height": 900, "alt": { "es": "", "en": "" }, "caption": { "es": "", "en": "" } }`. El archivo va en `src/assets/shots/`. Solo para proyectos con sitio público; di en el pie cuándo se tomó. |
+
+En los textos de `caseStudy`, lo que escribas entre `` `acentos graves` `` sale como código en línea.
 
 ### 3. Agregar una prueba técnica
 
@@ -231,9 +234,8 @@ No está implementado y no hace falta para nada de lo actual. Queda anotado para
 ## Pendientes conocidos
 
 - [x] **PDF del CV**: ya están los dos, español e inglés, en `cv/` (ver «Actualizar el CV»).
-- [ ] **Imagen de Open Graph.** Falta `src/assets/og.png` de 1200×630 para que el enlace se vea bien
-      en LinkedIn. Cuando exista, pon `"ogImage": "/assets/og.png"` en `src/_data/site.json`; las
-      etiquetas ya están condicionadas y aparecerán solas.
+- [x] **Imagen de Open Graph.** `src/assets/og.png` (1200×630) ya existe y `site.json` la apunta en
+      `"ogImage"`. Para cambiarla, reemplaza el archivo conservando el nombre y el tamaño.
 - [ ] **Revisión del inglés por un tercero.** Los textos en inglés no los escribiste tú; conviene que
       alguien con nivel alto los revise antes de difundir la versión `/en/`.
 - [ ] **Prueba técnica de LexCore**: en `techtests.json` está marcada con `"draft": true` y textos

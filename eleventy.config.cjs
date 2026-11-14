@@ -36,6 +36,25 @@ module.exports = function (eleventyConfig) {
     lang === "es" ? `/proyectos/${slug}/` : `/en/projects/${slug}/`
   );
 
+  // Texto de un caso de estudio con codigo en linea: lo que va entre
+  // `acentos graves` en el JSON sale como <code>. Escapa el HTML primero,
+  // asi que en la plantilla se usa con `| safe`.
+  eleventyConfig.addFilter("rich", (value) => {
+    const escaped = String(value === null || value === undefined ? "" : value)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+    return escaped.replace(/`([^`]+)`/g, "<code>$1</code>");
+  });
+
+  // Proyecto que sigue al actual en projects.json; despues del ultimo vuelve al primero.
+  eleventyConfig.addFilter("nextProject", (list, slug) => {
+    if (!Array.isArray(list) || list.length < 2) return null;
+    const index = list.findIndex((p) => p.slug === slug);
+    return list[(index + 1) % list.length];
+  });
+
   // URL absoluta, para Open Graph y JSON-LD.
   eleventyConfig.addFilter("absolute", (path, base) => {
     const clean = String(path || "/").replace(/^\/+/, "");

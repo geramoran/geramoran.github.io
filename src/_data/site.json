@@ -7,11 +7,11 @@
     "en": "Software engineer · Full-stack and AI orchestration"
   },
   "location": {
-    "es": "Torreón, Coahuila, México",
-    "en": "Torreón, Coahuila, Mexico"
+    "es": "Lerdo, Durango, México",
+    "en": "Lerdo, Durango, Mexico"
   },
-  "locality": "Torreón",
-  "region": "Coahuila",
+  "locality": "Lerdo",
+  "region": "Durango",
   "country": "MX",
   "timezone": "GMT-6",
   "yearsOfExperience": 9,
@@ -25,7 +25,6 @@
   },
   "licenseNumber": "12320388",
   "url": "https://geramoran.github.io",
-  "ogImage": null,
-  "ogImageTodo": "Cuando exista /src/assets/og.png (1200x630) pon aquí \"/assets/og.png\" y las etiquetas Open Graph la usarán. Ver README.",
+  "ogImage": "/assets/og.png",
   "comment": "El teléfono NO se publica en el sitio por decisión del titular: va únicamente en el CV descargable."
 }

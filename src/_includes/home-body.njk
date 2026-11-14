@@ -46,6 +46,15 @@
         </h3>
         <p class="proj__summary">{{ p.summary | t(lang) }}</p>
 
+        {% if p.image %}
+        <figure class="shot">
+          <a href="{{ p.slug | projectUrl(lang) | url }}" tabindex="-1" aria-hidden="true">
+            <img src="{{ p.image.src | url }}" width="{{ p.image.width }}" height="{{ p.image.height }}" alt="" loading="lazy">
+          </a>
+          <figcaption>{{ p.image.caption | t(lang) }}</figcaption>
+        </figure>
+        {% endif %}
+
         {% if p.metrics %}
         <dl class="metrics">
           {% for m in p.metrics %}
@@ -90,8 +99,17 @@
       <p class="row__meta mono">{{ job.period | t(lang) }}</p>
       <div class="row__body">
         <h3 class="row__title">{{ job.title | t(lang) }} · {{ job.org | t(lang) }}</h3>
+        {# Los dos puestos mas recientes van completos; los anteriores, plegados. #}
+        {% if loop.index <= 2 %}
         <p class="row__text">{{ job.summary | t(lang) }}</p>
         <p class="row__stack mono">{{ job.stack | join(" · ") }}</p>
+        {% else %}
+        <p class="row__stack mono">{{ job.stack | join(" · ") }}</p>
+        <details class="row__details">
+          <summary>{{ t.labels.details }}</summary>
+          <p class="row__text">{{ job.summary | t(lang) }}</p>
+        </details>
+        {% endif %}
       </div>
       <p class="row__aside mono">{{ job.place | t(lang) }}</p>
     </article>

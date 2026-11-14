@@ -24,7 +24,11 @@
       "en": "Developing · real but narrower exposure"
     },
     "emphasis": "muted",
-    "items": ["LangChain", "LangGraph", "Claude API", "Python", "Next.js", "Redis", "AWS S3", "RxJS"]
+    "items": ["LangChain", "LangGraph", "Claude API", "Python", "Angular 20/21", "NestJS", "Drizzle ORM", "Next.js", "Redis", "AWS S3", "RxJS"],
+    "note": {
+      "es": "En IA mi trabajo es orquestación e integración con modelos de lenguaje; no entrenamiento de modelos ni MLOps.",
+      "en": "In AI my work is orchestration and integration with language models; no model training and no MLOps."
+    }
   },
   {
     "id": "single-project",

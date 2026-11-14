@@ -1,6 +1,20 @@
 [
   {
     "title": {
+      "es": "Desarrollador Full-Stack Freelance (guiado por especificación)",
+      "en": "Freelance Full-Stack Developer (spec-driven)"
+    },
+    "org": { "es": "Cliente privado · SaaS multi-tenant", "en": "Private client · multi-tenant SaaS" },
+    "period": { "es": "Junio 2026 — actualidad", "en": "June 2026 — present" },
+    "place": { "es": "Remoto, México", "en": "Remote, Mexico" },
+    "summary": {
+      "es": "Desarrollador único de CostoPreciso, un SaaS multi-tenant de costeo y cotización para PYMEs manufactureras: motor de costeo determinista en TypeScript, backend NestJS con PostgreSQL y seguridad a nivel de fila, y frontend React. Hecho con Spec-kit y Claude Code (27 features de spec a tareas), con despliegue continuo a un VPS. En desarrollo activo.",
+      "en": "Sole developer of CostoPreciso, a multi-tenant costing and quoting SaaS for manufacturing SMEs: a deterministic TypeScript costing engine, a NestJS backend on PostgreSQL with row-level security, and a React frontend. Built with Spec-kit and Claude Code (27 features from spec to tasks), with continuous deployment to a VPS. In active development."
+    },
+    "stack": ["TypeScript", "NestJS", "Drizzle", "PostgreSQL", "React 18", "Vite", "Tailwind", "Docker", "GitHub Actions", "Spec-kit", "Claude Code"]
+  },
+  {
+    "title": {
       "es": "Full-Stack Web & AI Developer Senior",
       "en": "Senior Full-Stack Web & AI Developer"
     },
@@ -11,7 +25,7 @@
       "es": "Chat interno con orquestación de IA y portal de requisiciones con autorización multinivel (2025-2026). Anteriormente, módulos de nómina y gestión de personal multiempresa (2022-2024). Además, integraciones con Stripe con suscripciones recurrentes de membresía para un cliente en Next.js.",
       "en": "Internal chat platform with AI orchestration and a requisitions portal with multi-level approval (2025-2026); before that, payroll and multi-company HR modules (2022-2024). Also a short Stripe integration with recurring membership subscriptions for a client, in Next.js."
     },
-    "stack": ["TypeScript", "React", "Node.js", "Socket.io", "Prisma", "PostgreSQL", "Docker", "Claude Code", "AngularJS", "PHP/Laravel", "MySQL", "PHP", "Stripe", "Next.js", "Laravel 10"]
+    "stack": ["TypeScript", "React", "Node.js", "Socket.io", "Prisma", "PostgreSQL", "Docker", "Claude Code", "AngularJS", "Angular 21", "PHP / Laravel 11", "MySQL", "Stripe", "Next.js"]
   },
   {
     "title": {
@@ -32,7 +46,7 @@
       "es": "Webmaster Developer",
       "en": "Webmaster Developer"
     },
-    "org": "Básculas REVUELTA",
+    "org": "Grupo Revuelta",
     "period": { "es": "Julio 2021 — enero 2022", "en": "July 2021 — January 2022" },
     "place": { "es": "Torreón, Coahuila", "en": "Torreón, Coahuila" },
     "summary": {
