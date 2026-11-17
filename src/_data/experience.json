@@ -4,8 +4,8 @@
       "es": "Desarrollador Full-Stack Freelance (guiado por especificación)",
       "en": "Freelance Full-Stack Developer (spec-driven)"
     },
-    "org": { "es": "Cliente privado · SaaS multi-tenant", "en": "Private client · multi-tenant SaaS" },
-    "period": { "es": "Junio 2026 — actualidad", "en": "June 2026 — present" },
+    "org": { "es": "CostoPreciso · SaaS multi-tenant para cliente", "en": "CostoPreciso · multi-tenant SaaS for a client" },
+    "period": { "es": "Agosto 2026 — actualidad", "en": "August 2026 — present" },
     "place": { "es": "Remoto, México", "en": "Remote, Mexico" },
     "summary": {
       "es": "Desarrollador único de CostoPreciso, un SaaS multi-tenant de costeo y cotización para PYMEs manufactureras: motor de costeo determinista en TypeScript, backend NestJS con PostgreSQL y seguridad a nivel de fila, y frontend React. Hecho con Spec-kit y Claude Code (27 features de spec a tareas), con despliegue continuo a un VPS. En desarrollo activo.",
