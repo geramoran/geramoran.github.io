@@ -26,8 +26,8 @@
       "en": "The link opens the product's public site. The application requires an account and the repository is private to the client."
     },
     "summary": {
-      "es": "Plataforma SaaS multi-tenant de costeo y cotización para PYMEs manufactureras mexicanas, empezando por metalmecánica. Veintisiete features pasaron por spec → plan → tasks con Spec-kit antes de existir. Un motor de costeo determinista en TypeScript puro calcula el costo por proceso, el reparto de logística y el precio sugerido, y lo comparten el backend y el frontend.",
-      "en": "Multi-tenant costing and quoting SaaS for Mexican manufacturing SMEs, starting with metalworking. Twenty-seven features went through spec → plan → tasks with Spec-kit before they existed. A deterministic pure-TypeScript costing engine computes cost per process, logistics allocation and suggested price, and both the backend and the frontend share it."
+      "es": "Plataforma SaaS multi-tenant de costeo y cotización para PYMEs manufactureras mexicanas, empezando por metalmecánica. Cada feature pasó por spec → plan → tasks con Spec-kit antes de existir. Un motor de costeo determinista en TypeScript puro calcula el costo por proceso, el reparto de logística y el precio sugerido, y lo comparten el backend y el frontend.",
+      "en": "Multi-tenant costing and quoting SaaS for Mexican manufacturing SMEs, starting with metalworking. Every feature went through spec → plan → tasks with Spec-kit before it existed. A deterministic pure-TypeScript costing engine computes cost per process, logistics allocation and suggested price, and both the backend and the frontend share it."
     },
     "stack": ["TypeScript", "NestJS", "Drizzle", "PostgreSQL 16", "React 18", "Vite", "Tailwind", "shadcn/ui", "Docker", "Nginx", "GitHub Actions"],
     "caseStudy": {
@@ -39,8 +39,8 @@
         {
           "title": { "es": "Una constitución antes que la primera línea de código", "en": "A constitution before the first line of code" },
           "body": {
-            "es": "El proyecto arranca con principios NO NEGOCIABLES escritos: motor puro que no importa infraestructura, fórmulas deterministas trazables a su sección numerada, vocabulario agnóstico al giro en el motor y multi-tenant desde el día cero. Cada una de las 27 features pasó por spec, plan y tasks con Spec-kit y Claude Code antes de implementarse, y cada una se cierra contra pruebas automatizadas unitarias y end-to-end.",
-            "en": "The project starts with written NON-NEGOTIABLE principles: a pure engine that imports no infrastructure, deterministic formulas traceable to their numbered section, industry-agnostic vocabulary in the engine, and multi-tenant from day zero. Each of the 27 features went through spec, plan and tasks with Spec-kit and Claude Code before implementation, and each one is closed against automated unit and end-to-end tests."
+            "es": "El proyecto arranca con principios NO NEGOCIABLES escritos: motor puro que no importa infraestructura, fórmulas deterministas trazables a su sección numerada, vocabulario agnóstico al giro en el motor y multi-tenant desde el día cero. Cada feature pasó por spec, plan y tasks con Spec-kit y Claude Code antes de implementarse, y cada una se cierra contra pruebas automatizadas unitarias y end-to-end.",
+            "en": "The project starts with written NON-NEGOTIABLE principles: a pure engine that imports no infrastructure, deterministic formulas traceable to their numbered section, industry-agnostic vocabulary in the engine, and multi-tenant from day zero. Each feature went through spec, plan and tasks with Spec-kit and Claude Code before implementation, and each one is closed against automated unit and end-to-end tests."
           }
         },
         {

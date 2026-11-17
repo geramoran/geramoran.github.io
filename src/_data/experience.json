@@ -8,8 +8,8 @@
     "period": { "es": "Agosto 2026 — actualidad", "en": "August 2026 — present" },
     "place": { "es": "Remoto, México", "en": "Remote, Mexico" },
     "summary": {
-      "es": "Desarrollador único de CostoPreciso, un SaaS multi-tenant de costeo y cotización para PYMEs manufactureras: motor de costeo determinista en TypeScript, backend NestJS con PostgreSQL y seguridad a nivel de fila, y frontend React. Hecho con Spec-kit y Claude Code (27 features de spec a tareas), con despliegue continuo a un VPS. En desarrollo activo.",
-      "en": "Sole developer of CostoPreciso, a multi-tenant costing and quoting SaaS for manufacturing SMEs: a deterministic TypeScript costing engine, a NestJS backend on PostgreSQL with row-level security, and a React frontend. Built with Spec-kit and Claude Code (27 features from spec to tasks), with continuous deployment to a VPS. In active development."
+      "es": "Desarrollador único de CostoPreciso, un SaaS multi-tenant de costeo y cotización para PYMEs manufactureras: motor de costeo determinista en TypeScript, backend NestJS con PostgreSQL y seguridad a nivel de fila, y frontend React. Hecho con Spec-kit y Claude Code (cada feature, de spec a tareas), con despliegue continuo a un VPS. En desarrollo activo.",
+      "en": "Sole developer of CostoPreciso, a multi-tenant costing and quoting SaaS for manufacturing SMEs: a deterministic TypeScript costing engine, a NestJS backend on PostgreSQL with row-level security, and a React frontend. Built with Spec-kit and Claude Code (every feature from spec to tasks), with continuous deployment to a VPS. In active development."
     },
     "stack": ["TypeScript", "NestJS", "Drizzle", "PostgreSQL", "React 18", "Vite", "Tailwind", "Docker", "GitHub Actions", "Spec-kit", "Claude Code"]
   },
